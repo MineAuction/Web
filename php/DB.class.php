@@ -2,9 +2,9 @@
 class DB{
 	private static $connection;
   /*
-	private static $dsn = 'mysql:dbname=c2auction;host=lukas.jinonice.cz;port=3306';
-	private static $user = 'c2lukas';
-	private static $password = 'belina';
+	private static $dsn = 'mysql:dbname=###;host=####.#####;port=3306';
+	private static $user = '####';
+	private static $password = '####';
   */
   
 	private static $options = array(
