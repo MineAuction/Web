@@ -1,0 +1,40 @@
+/* Logo in header START */
+.brand img{
+  vertical-align: top;
+}      
+.brand span{
+  height: 35px;
+  line-height: 35px;
+}
+/* Logo in header END */
+
+/* Button in inventory */
+.button1 {
+  margin: 0px 4px;
+}
+
+/* Input in inventory */
+.input1 {
+  margin-bottom: 0px !important; width: 60px !important;
+  margin-right: 5px;
+}
+
+/* to right */
+.to_right {
+  text-align: right !important;
+}
+ 
+/* in inventory: delete space between add-on and input */   
+.add-on {
+  margin-right: -5px !important;
+}
+
+/* space around img in inventory */
+.img1 {
+  margin-right: 5px;  
+}
+
+/* Click for max items to input */
+.click_max {
+  cursor: pointer;
+}
