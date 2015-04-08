@@ -10,15 +10,15 @@ class Money{
 
   private $table_name = "aukce_ajconomy";
 
-  private $database_name = "####";
+  private $database_name = "";
 
-  private $server = "###";
+  private $server = "";
 
 
 
   public function __construct(){
 
-    DB::connect("mysql:dbname=$this->database_name;host=$this->server;port=3306", '###', '####');
+    DB::connect("mysql:dbname=$this->database_name;host=$this->server;port=3306", '', '');
 
   }
 
@@ -48,7 +48,7 @@ class Money{
 
     
 
-    DB::connect('mysql:dbname=c2auction;host=lukas.jinonice.cz;port=3306', 'c2lukas', 'belina');
+    //DB::connect('');
 
     return $ret[$this->column_money];
 

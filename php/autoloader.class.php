@@ -7,12 +7,11 @@ class Autoloader{
   private $path = "php";
 
 
-
   /**
 
    * Require all files in directory $path
 
-   */     
+     
 
   public function __construct(){
 
@@ -22,7 +21,8 @@ class Autoloader{
 
         if(strLen($entry) < 3) continue;
 
-        if($entry == "ajax") continue;   // TODO: oh shit! Kokotovina :)
+        if($entry == "ajax") continue;  
+        if($entry == "lib") continue;   
 
         
 
@@ -32,7 +32,7 @@ class Autoloader{
 
     } 
 
-  }
+  }     */
 
 }
 

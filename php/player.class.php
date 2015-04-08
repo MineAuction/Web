@@ -2,7 +2,7 @@
 class Player{
     public static function inv($playerID){
       $sql = "
-        SELECT il.name, il.img, ip.qty 
+        SELECT il.name, il.img, ip.qty, ip.itemId, ip.itemDamage  
         FROM " . TABLE_ITEMS_LIST . " AS il 
         INNER JOIN " . TABLE_ITEMS . " AS ip 
         ON 

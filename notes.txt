@@ -1,0 +1,7 @@
+CREATE VIEW ma_view_offers AS 
+SELECT ip.id AS offerId, p.playerName, p.id AS playerId, il.name, il.img, ip.qty, ip.price, ip.qty*ip.price AS priceAll   
+FROM items_list AS il 
+INNER JOIN ma_offers AS ip 
+INNER JOIN ma_players AS p 
+ON ip.itemID = il.itemID AND ip.itemDamage = il.itemSubID AND p.id = ip.playerID 
+

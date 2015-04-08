@@ -1,23 +1,26 @@
 <?php
 class Offers{
   public static function offer(){
-      $where = array(":playerName" => /* $_SESSION['playerName'] */ 1);
-  $sql = "
-        SELECT il.name, il.img, ip.qty, ip.playerName,ip.priceAll, ip.price 
-        FROM " . TABLE_ITEMS_LIST . " AS il 
-        INNER JOIN " . TABLE_OFFERS . " AS ip 
-        ON 
-          ip.itemID = il.itemID AND 
-          ip.itemDamage = il.itemSubID
-          WHERE ip.playerName != :playerName
-      ";
-      $items = DB::assocAll(DB::query($sql, $where));
-      return $items;
+		$where = array(":playerId" => /* $_SESSION['playerId'] */ 12);
+		
+		// TODO: databazovy view nefunguje z neznamych pricin
+		$sql = "
+			SELECT ip.id AS offerId, p.playerName, p.id AS playerId, il.name, il.img, ip.qty, ip.price, ip.qty*ip.price AS priceAll, ip.itemId, ip.itemDamage    
+			FROM items_list AS il 
+			INNER JOIN ma_offers AS ip 
+			INNER JOIN ma_players AS p 
+			ON ip.itemID = il.itemID AND ip.itemDamage = il.itemSubID AND p.id = ip.playerID 
+			WHERE playerId != :playerId
+    ";
+		
+		$items = DB::assocAll(DB::query($sql, $where));
+		//print_r($items);
+    return $items;
   }
   
   // Insert offer into ma_offers and update mount items or delete items from ma_items
   public static function offerIn($itemID, $itemDamage, $qty, $price){
-    $off = array(":itemID" => $itemID, ":itemDamage" => $itemDamage, ":playerID" => $_SESSION['playerId']);
+    $off = array(":itemID" => $itemID, ":itemDamage" => $itemDamage, ":playerID" =>  $_SESSION['playerId']);
     $offers = DB::assoc(DB::query("SELECT * FROM " . TABLE_ITEMS . " WHERE itemID = :itemID AND itemDamage = :itemDamage AND playerID = :playerID ", $off));
   if($qty <= $offers['qty']){
     if($qty == $offers['qty']) {

@@ -10,9 +10,10 @@ class Menu{
   /**
    * Load all menu items from database
    */     
-  public function loadMenuItems(){
-    $menu = array();
-    $res = DB::query("SELECT * FROM " . TABLE_MENU);
+  public function loadMenuItems($userAdmin){
+		$menu = array();
+		$sql = ($userAdmin == 0) ? "SELECT * FROM " . TABLE_MENU . " WHERE is_private = '0'" : "SELECT * FROM " . TABLE_MENU . "";
+    $res = DB::query($sql);
     while($item = DB::assoc($res)){
       if($this->get == $item['url']){
         $item['active'] = "active";

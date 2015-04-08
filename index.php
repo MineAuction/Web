@@ -1,9 +1,9 @@
 <?php
-  ini_set('display_errors','on');
+  require_once 'config.inc.php';
   require_once 'twig/lib/Twig/Autoloader.php';
-  require_once 'php/autoloader.class.php';
-  $a = new Autoloader();
-
+  require_once 'php/lib/LoadClass.php';
+ 
+  spl_autoload_register("LoadClass");
 	/**
 	 * Pripravi sablonovaci system Twig; udajne bez cachovani
 	 * Cesta k slozce s template je relativni od umisteni index.php

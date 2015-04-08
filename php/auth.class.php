@@ -15,6 +15,7 @@ class Auth{
       $_SESSION['playerUUID'] = $user['uuid'];
       $_SESSION['playerName'] = $user['playerName'];
       $_SESSION['playerMoney'] = $user['money'];
+			$_SESSION['playerAdmin'] = $user['admin'];
       return TRUE;
     }
   }

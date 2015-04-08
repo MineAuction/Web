@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.11.1deb2+deb7u1
+-- version 3.5.8.2
 -- http://www.phpmyadmin.net
 --
--- Počítač: localhost
--- Vygenerováno: Ned 05. dub 2015, 00:44
--- Verze MySQL: 5.5.41
--- Verze PHP: 5.4.39-0+deb7u2
+-- Počítač: wm48.wedos.net:3306
+-- Vygenerováno: Stř 08. dub 2015, 23:32
+-- Verze serveru: 5.6.14
+-- Verze PHP: 5.4.23
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Databáze: `c2auction`
+-- Databáze: `d9350_netg2`
 --
 
 -- --------------------------------------------------------
@@ -747,159 +747,130 @@ INSERT INTO `items_list` (`itemID`, `itemSubID`, `name`, `img`) VALUES
 -- --------------------------------------------------------
 
 --
--- Struktura tabulky `ma_bans`
---
-
-CREATE TABLE IF NOT EXISTS `ma_bans` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `playerName` varchar(40) NOT NULL,
-  `ban` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
--- --------------------------------------------------------
-
---
 -- Struktura tabulky `ma_items`
 --
 
 CREATE TABLE IF NOT EXISTS `ma_items` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `playerID` int(11) NOT NULL,
   `itemID` varchar(128) NOT NULL,
   `itemDamage` int(11) NOT NULL,
   `qty` int(11) NOT NULL,
   `itemMeta` text NOT NULL,
   `enchantments` varchar(512) NOT NULL,
-  `lore` varchar(2048) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+  `lore` varchar(2048) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=125 ;
 
 --
 -- Vypisuji data pro tabulku `ma_items`
 --
 
-INSERT INTO `ma_items` (`playerID`, `itemID`, `itemDamage`, `qty`, `itemMeta`, `enchantments`, `lore`) VALUES
-(1, '1', 4, 192, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '31', 1, -6, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '38', 7, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '97', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '171', 4, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(1, '1', 2, 4, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '76', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '348', 0, 7, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '16', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '35', 6, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '20', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '35', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '46', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(1, '14', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '295', 0, 2, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '419', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '12', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '4', 0, 8, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '24', 0, 7, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '323', 0, 1, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
-(6, '425', 4, 2, '{"meta-type":"BANNER","base-color":"BLUE"}', '{}', ''),
-(7, '323', 0, 1, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
-(7, '19', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '35', 0, 60, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '12', 0, 75, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '1', 5, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '35', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '24', 2, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '17', 2, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '54', 0, 64, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
-(6, '348', 0, 3, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '175', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '171', 15, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '424', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '373', 16457, 1, '{"meta-type":"POTION"}', '{}', ''),
-(6, '327', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '412', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '138', 0, 11970, '', '', ''),
-(6, '376', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '377', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '373', 8237, 1, '{"meta-type":"POTION"}', '{}', ''),
-(6, '416', 0, 16, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '1', 2, 15, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '175', 1, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '397', 2, 64, '{"meta-type":"SKULL"}', '{}', ''),
-(6, '425', 0, 16, '{"meta-type":"BANNER","base-color":"BLACK"}', '{}', ''),
-(6, '425', 5, 16, '{"meta-type":"BANNER","base-color":"PURPLE"}', '{}', ''),
-(6, '419', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '2256', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '397', 4, 64, '{"meta-type":"SKULL"}', '{}', ''),
-(6, '351', 5, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '189', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '6', 5, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '38', 6, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '38', 1, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '390', 0, 64, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
-(6, '389', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '6', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '6', 4, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(1, '7', 0, 2, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(6, '7', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}}', '{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}', ''),
-(6, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"DAMAGE_ALL":2}}', '{"DAMAGE_ALL":2}', ''),
-(7, '40', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '42', 0, 2, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"LOOT_BONUS_MOBS":2,"KNOCKBACK":2,"DAMAGE_ARTHROPODS":3}}', '{"DAMAGE_ARTHROPODS":3,"KNOCKBACK":2,"LOOT_BONUS_MOBS":2}', ''),
-(6, '272', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"KNOCKBACK":2,"DAMAGE_ARTHROPODS":4}}', '{"DAMAGE_ARTHROPODS":4,"KNOCKBACK":2}', ''),
-(9, '35', 3, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(7, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"KNOCKBACK":1}}', '{"KNOCKBACK":1}', ''),
-(9, '97', 4, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '323', 0, 1, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
-(9, '159', 3, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '156', 0, 128, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '139', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '123', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '109', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '97', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '95', 11, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '98', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '95', 13, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '88', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '84', 0, 64, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
-(9, '82', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '73', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '76', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '95', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '98', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '113', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '148', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '159', 14, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '315', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '361', 0, 128, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '351', 13, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '322', 1, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '304', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '299', 0, 1, '{"meta-type":"LEATHER_ARMOR"}', '{}', ''),
-(9, '3', 2, 199, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '18', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '35', 11, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '45', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '44', 4, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '373', 16, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 8202, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 8197, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 0, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 8201, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 8196, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 8201, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 8193, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 0, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 8196, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 16417, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 16457, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 16396, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '373', 16387, 1, '{"meta-type":"POTION"}', '{}', ''),
-(9, '383', 90, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '383', 50, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '383', 101, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '387', 0, 16, '{"meta-type":"BOOK_SIGNED"}', '{}', ''),
-(9, '383', 98, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '383', 96, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(9, '383', 67, 64, '{"meta-type":"UNSPECIFIC"}', '{}', '');
+INSERT INTO `ma_items` (`id`, `playerID`, `itemID`, `itemDamage`, `qty`, `itemMeta`, `enchantments`, `lore`) VALUES
+(1, 1, '1', 4, 182, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(2, 6, '31', 1, 10, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(3, 6, '38', 7, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(4, 6, '97', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(6, 1, '1', 2, 4, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(8, 7, '348', 0, 190, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(9, 6, '16', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(10, 6, '35', 6, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(11, 6, '20', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(12, 6, '35', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(14, 1, '14', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(17, 6, '12', 0, 60, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(21, 6, '425', 4, 2, '{"meta-type":"BANNER","base-color":"BLUE"}', '{}', ''),
+(23, 7, '19', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(24, 7, '35', 0, 60, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(25, 7, '12', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(27, 7, '35', 2, 55, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(30, 6, '54', 0, 64, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
+(31, 6, '348', 0, 3, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(32, 6, '175', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(33, 6, '171', 15, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(34, 6, '424', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(35, 6, '373', 16457, 1, '{"meta-type":"POTION"}', '{}', ''),
+(36, 6, '327', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(37, 6, '412', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(124, 6, '138', 0, 999856, '', '', ''),
+(39, 6, '376', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(41, 6, '373', 8237, 1, '{"meta-type":"POTION"}', '{}', ''),
+(42, 6, '416', 0, 16, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(44, 6, '175', 1, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(45, 6, '397', 2, 64, '{"meta-type":"SKULL"}', '{}', ''),
+(46, 6, '425', 0, 16, '{"meta-type":"BANNER","base-color":"BLACK"}', '{}', ''),
+(47, 6, '425', 5, 16, '{"meta-type":"BANNER","base-color":"PURPLE"}', '{}', ''),
+(48, 6, '419', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(49, 6, '2256', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(50, 6, '397', 4, 64, '{"meta-type":"SKULL"}', '{}', ''),
+(51, 6, '351', 5, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(52, 6, '189', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(53, 6, '6', 5, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(54, 6, '38', 6, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(55, 6, '38', 1, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(56, 6, '390', 0, 64, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
+(57, 6, '389', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(58, 6, '6', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(59, 6, '6', 4, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(60, 1, '7', 0, 2, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(61, 6, '7', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(62, 1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}}', '{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}', ''),
+(63, 6, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"DAMAGE_ALL":2}}', '{"DAMAGE_ALL":2}', ''),
+(66, 1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"LOOT_BONUS_MOBS":2,"KNOCKBACK":2,"DAMAGE_ARTHROPODS":3}}', '{"DAMAGE_ARTHROPODS":3,"KNOCKBACK":2,"LOOT_BONUS_MOBS":2}', ''),
+(68, 9, '35', 3, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(70, 9, '97', 4, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(71, 9, '323', 0, 1, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
+(72, 9, '159', 3, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(73, 9, '156', 0, 128, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(74, 9, '139', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(75, 9, '123', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(76, 9, '109', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(77, 9, '97', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(78, 9, '95', 11, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(79, 9, '98', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(80, 9, '95', 13, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(81, 9, '88', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(82, 9, '84', 0, 64, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
+(83, 9, '82', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(84, 9, '73', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(85, 9, '76', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(86, 9, '95', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(87, 9, '98', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(88, 9, '113', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(89, 9, '148', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(90, 9, '159', 14, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(91, 9, '315', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(92, 9, '361', 0, 128, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(93, 9, '351', 13, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(94, 9, '322', 1, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(95, 9, '304', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(96, 9, '299', 0, 1, '{"meta-type":"LEATHER_ARMOR"}', '{}', ''),
+(97, 9, '3', 2, 199, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(98, 9, '18', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(99, 9, '35', 11, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(100, 9, '45', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(101, 9, '44', 4, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(102, 9, '373', 16, 1, '{"meta-type":"POTION"}', '{}', ''),
+(103, 9, '373', 8202, 1, '{"meta-type":"POTION"}', '{}', ''),
+(104, 9, '373', 8197, 1, '{"meta-type":"POTION"}', '{}', ''),
+(105, 9, '373', 0, 1, '{"meta-type":"POTION"}', '{}', ''),
+(106, 9, '373', 8201, 1, '{"meta-type":"POTION"}', '{}', ''),
+(107, 9, '373', 8196, 1, '{"meta-type":"POTION"}', '{}', ''),
+(108, 9, '373', 8201, 1, '{"meta-type":"POTION"}', '{}', ''),
+(109, 9, '373', 8193, 1, '{"meta-type":"POTION"}', '{}', ''),
+(110, 9, '373', 0, 1, '{"meta-type":"POTION"}', '{}', ''),
+(111, 9, '373', 8196, 1, '{"meta-type":"POTION"}', '{}', ''),
+(112, 9, '373', 16417, 1, '{"meta-type":"POTION"}', '{}', ''),
+(113, 9, '373', 16457, 1, '{"meta-type":"POTION"}', '{}', ''),
+(114, 9, '373', 16396, 1, '{"meta-type":"POTION"}', '{}', ''),
+(115, 9, '373', 16387, 1, '{"meta-type":"POTION"}', '{}', ''),
+(116, 9, '383', 90, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(117, 9, '383', 50, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(118, 9, '383', 101, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(119, 9, '387', 0, 16, '{"meta-type":"BOOK_SIGNED"}', '{}', ''),
+(120, 9, '383', 98, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(121, 9, '383', 96, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(122, 9, '383', 67, 64, '{"meta-type":"UNSPECIFIC"}', '{}', '');
 
 -- --------------------------------------------------------
 
@@ -914,7 +885,7 @@ CREATE TABLE IF NOT EXISTS `ma_logs` (
   `text` text CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=95 ;
 
 --
 -- Vypisuji data pro tabulku `ma_logs`
@@ -941,7 +912,72 @@ INSERT INTO `ma_logs` (`id`, `component`, `level`, `text`, `time`) VALUES
 (26, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-04 21:22:30'),
 (27, 'Login', 'info', 'Uzivatel Monetic uspěšně přihlášen.', '2015-04-04 21:24:27'),
 (28, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-04 21:24:32'),
-(29, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-04 21:39:27');
+(29, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-04 21:39:27'),
+(30, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:28:43'),
+(31, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:31:51'),
+(32, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:31:52'),
+(33, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:31:53'),
+(34, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:31:58'),
+(35, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:31:59'),
+(36, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:32:05'),
+(37, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:32:06'),
+(38, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:32:22'),
+(39, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:32:22'),
+(40, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:32:23'),
+(41, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:32:23'),
+(42, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 07:32:31'),
+(43, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-05 08:40:12'),
+(44, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:05:39'),
+(45, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:06:24'),
+(46, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:08:47'),
+(47, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:22:00'),
+(48, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-05 09:26:38'),
+(49, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:26:40'),
+(50, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:26:59'),
+(51, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:30:58'),
+(52, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:34:02'),
+(53, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:36:10'),
+(54, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:38:42'),
+(55, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:42:55'),
+(56, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:44:16'),
+(57, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 09:45:11'),
+(58, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 10:07:24'),
+(59, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 11:05:23'),
+(60, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-05 12:43:31'),
+(61, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-05 14:02:48'),
+(62, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-05 16:46:02'),
+(63, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-05 18:25:43'),
+(64, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-05 18:25:50'),
+(65, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-06 16:32:25'),
+(66, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-06 16:32:35'),
+(67, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-06 19:25:57'),
+(68, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-06 19:33:42'),
+(69, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-06 20:19:45'),
+(70, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-07 08:09:18'),
+(71, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-07 10:15:35'),
+(72, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-07 10:36:57'),
+(73, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-07 12:04:41'),
+(74, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-07 20:39:26'),
+(75, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-08 04:46:16'),
+(76, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-08 05:31:57'),
+(77, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 09:36:16'),
+(78, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-08 09:55:30'),
+(79, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 14:37:46'),
+(80, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-08 14:37:47'),
+(81, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 16:03:52'),
+(82, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 16:05:13'),
+(83, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-08 16:29:15'),
+(84, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-08 16:29:17'),
+(85, 'Login', 'info', 'Uzivatel Sognus uspěšně přihlášen.', '2015-04-08 17:54:53'),
+(86, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-08 20:42:25'),
+(87, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 21:03:02'),
+(88, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 21:04:47'),
+(89, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-08 21:06:17'),
+(90, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 21:06:24'),
+(91, 'Login', 'info', 'Uzivatel LynSis uspěšně přihlášen.', '2015-04-08 21:13:04'),
+(92, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 21:14:37'),
+(93, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 21:19:04'),
+(94, 'Login', 'info', 'Uzivatel Sekiphp uspěšně přihlášen.', '2015-04-08 21:20:14');
 
 -- --------------------------------------------------------
 
@@ -951,25 +987,30 @@ INSERT INTO `ma_logs` (`id`, `component`, `level`, `text`, `time`) VALUES
 
 CREATE TABLE IF NOT EXISTS `ma_offers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `playerName` varchar(40) NOT NULL,
+  `playerID` int(11) NOT NULL,
   `itemID` varchar(255) NOT NULL,
   `itemDamage` int(11) NOT NULL,
-  `priceAll` decimal(10,2) NOT NULL,
   `qty` int(11) NOT NULL,
-  `price` decimal(10,2) NOT NULL,
   `itemMeta` varchar(255) NOT NULL,
+  `enchantments` varchar(512) NOT NULL,
+  `lore` varchar(2048) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
+  `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=46 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
 --
 -- Vypisuji data pro tabulku `ma_offers`
 --
 
-INSERT INTO `ma_offers` (`id`, `playerName`, `itemID`, `itemDamage`, `priceAll`, `qty`, `price`, `itemMeta`) VALUES
-(42, 'LynSis', '5', 0, 1000.00, 1000, 0.00, ''),
-(43, 'LynSis', '10', 0, 1000.00, 1000, 0.00, ''),
-(44, 'LynSis', '10', 0, 100.00, 10, 0.00, ''),
-(45, 'LynSis', '10', 0, 100.00, 10, 0.00, '');
+INSERT INTO `ma_offers` (`id`, `playerID`, `itemID`, `itemDamage`, `qty`, `itemMeta`, `enchantments`, `lore`, `price`) VALUES
+(1, 7, '348', 0, 10, '{"meta-type":"UNSPECIFIC"}', '{}', '', 1.36),
+(2, 7, '348', 0, 5, '{"meta-type":"UNSPECIFIC"}', '{}', '', 1.38),
+(3, 6, '138', 0, 112, '', '', '', 1.00),
+(4, 7, '348', 0, 3, '{"meta-type":"UNSPECIFIC"}', '{}', '', 1.00),
+(5, 7, '348', 0, 3, '{"meta-type":"UNSPECIFIC"}', '{}', '', 3.00),
+(6, 6, '138', 0, 22, '', '', '', 10.00),
+(7, 7, '348', 0, 10, '{"meta-type":"UNSPECIFIC"}', '{}', '', 963.00),
+(8, 7, '348', 0, 9, '{"meta-type":"UNSPECIFIC"}', '{}', '', 9.89);
 
 -- --------------------------------------------------------
 
@@ -997,20 +1038,36 @@ CREATE TABLE IF NOT EXISTS `ma_players` (
   `money` decimal(11,2) NOT NULL DEFAULT '0.00',
   `locked` tinyint(1) NOT NULL DEFAULT '0',
   `password` char(40) NOT NULL,
+  `admin` set('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Vypisuji data pro tabulku `ma_players`
 --
 
-INSERT INTO `ma_players` (`id`, `playerName`, `uuid`, `money`, `locked`, `password`) VALUES
-(1, 'Sognus', '07256eba-f044-4d0f-ba0f-da99524376a4', 999999999.99, 0, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3'),
-(6, 'LynSis', '7d771840-f713-4b26-ad23-141f68ea575f', 999999999.99, 0, 'dc63d6ec195bce05be6ad090acefe89e028e40e4'),
-(7, 'Sekiphp', 'abfce32e-8817-41a6-a1cd-fe8ada2dea12', 50000.00, 0, 'edb433bdd7c13851c7c68cb31a5acf33a80cd2cc'),
-(8, 'dwi', '57798a5e-5bde-4664-8abe-dd7687694b45', 0.00, 0, '6a032f5aa3c90284feb5007b09670555a0289613'),
-(9, 'Monetic', '5edb832b-dcf3-476c-b9da-f0fd999c4af7', 0.00, 0, '7c4a8d09ca3762af61e59520943dc26494f8941b');
+INSERT INTO `ma_players` (`id`, `playerName`, `uuid`, `money`, `locked`, `password`, `admin`) VALUES
+(1, 'Sognus', '07256eba-f044-4d0f-ba0f-da99524376a4', 999999999.99, 0, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '0'),
+(6, 'LynSis', '7d771840-f713-4b26-ad23-141f68ea575f', 999999999.99, 0, 'dc63d6ec195bce05be6ad090acefe89e028e40e4', '1'),
+(7, 'Sekiphp', 'abfce32e-8817-41a6-a1cd-fe8ada2dea12', 50000.00, 0, 'edb433bdd7c13851c7c68cb31a5acf33a80cd2cc', '1'),
+(8, 'dwi', '57798a5e-5bde-4664-8abe-dd7687694b45', 0.00, 0, '6a032f5aa3c90284feb5007b09670555a0289613', '0'),
+(9, 'Monetic', '5edb832b-dcf3-476c-b9da-f0fd999c4af7', 0.00, 0, '7c4a8d09ca3762af61e59520943dc26494f8941b', '0');
 
+-- --------------------------------------------------------
+
+--
+-- Zástupná struktura pro pohled `ma_view_offers`
+--
+CREATE TABLE IF NOT EXISTS `ma_view_offers` (
+`offerId` int(11)
+,`playerName` varchar(32)
+,`playerId` int(16)
+,`name` varchar(50)
+,`img` varchar(50)
+,`qty` int(11)
+,`price` decimal(10,2)
+,`priceAll` decimal(20,2)
+);
 -- --------------------------------------------------------
 
 --
@@ -1022,6 +1079,7 @@ CREATE TABLE IF NOT EXISTS `menu_items` (
   `name` varchar(15) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
   `url` varchar(255) NOT NULL,
   `ico` varchar(255) NOT NULL,
+  `is_private` enum('0','1') NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
@@ -1029,14 +1087,23 @@ CREATE TABLE IF NOT EXISTS `menu_items` (
 -- Vypisuji data pro tabulku `menu_items`
 --
 
-INSERT INTO `menu_items` (`id`, `name`, `url`, `ico`) VALUES
-(1, 'Inventář', 'inventory', 'icon-dashboard'),
-(2, 'Nabídky', 'offer', 'icon-list-alt'),
-(3, 'Poptávky', 'demand', 'icon-facetime-video'),
-(4, 'Žebříčky', 'stats', 'icon-bar-chart'),
-(5, 'Log', 'logs', 'icon-code'),
-(6, 'Administrace', 'admin', 'icon-signal'),
-(7, 'PHPMYADMIN', 'http://php.banana-heads.eu/phpmyadmin/', 'icon-signal');
+INSERT INTO `menu_items` (`id`, `name`, `url`, `ico`, `is_private`) VALUES
+(1, 'Inventář', 'inventory', 'icon-dashboard', '0'),
+(2, 'Nabídky', 'offer', 'icon-list-alt', '0'),
+(3, 'Poptávky', 'demand', 'icon-facetime-video', '0'),
+(4, 'Žebříčky', 'stats', 'icon-bar-chart', '0'),
+(5, 'Log', 'logs', 'icon-code', '0'),
+(6, 'Administrace', 'admin', 'icon-signal', '1'),
+(7, 'PHPMYADMIN', 'http://php.banana-heads.eu/phpmyadmin/', 'icon-signal', '1');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura pro pohled `ma_view_offers`
+--
+DROP TABLE IF EXISTS `ma_view_offers`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`a9350_netg2`@`%` SQL SECURITY DEFINER VIEW `ma_view_offers` AS select `ip`.`id` AS `offerId`,`p`.`playerName` AS `playerName`,`p`.`id` AS `playerId`,`il`.`name` AS `name`,`il`.`img` AS `img`,`ip`.`qty` AS `qty`,`ip`.`price` AS `price`,(`ip`.`qty` * `ip`.`price`) AS `priceAll` from ((`items_list` `il` join `ma_offers` `ip`) join `ma_players` `p` on(((`ip`.`itemID` = `il`.`itemID`) and (`ip`.`itemDamage` = `il`.`itemSubID`) and (`p`.`id` = `ip`.`playerID`))));
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

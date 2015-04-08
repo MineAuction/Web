@@ -1,5 +1,4 @@
 {% extends "index.tpl" %}
 
-{% block content %}
-  demant je nýmand!
+{% block content %} demand
 {% endblock %}

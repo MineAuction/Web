@@ -1,27 +1,32 @@
 <?php
+/**
+ * Main application class, manage the whole program
+ * 
+ * @author: Sekiphp
+ * @created: 30.3.2015 
+ */ 
 class Main {
 	/** $_GET['page'] from URL */
 	private $get = NULL;
 	/** Name of template to show */
 	public $tpl = NULL;
-	/** Pole argumentu, ktere se predaji sablonovacimu systemu */
+	/** Array of values to templates */
 	public $render = array();
 	
 	/**
-	 * Hlavni ridici metoda cele aplikace
-	 * Do teto metody pridavat jen vyjimecne!!!   
-	 *
-	 * @param $get String argumenty prikazove radky
+	 * Main application method
+	 * !!! No edit !!!
 	 */
   public function __construct() {
     $this->get = @$_GET['page'];   
     $this->selectPage();
+		$this->addFileExtension();
     $m = new Menu($this->get);
     
     // variables to twig template
 	  $this->render['session'] = @$_SESSION;  
     $this->render['settings'] = $GLOBALS['settings'];
-    $this->render['menu'] = $m->loadMenuItems();  
+    $this->render['menu'] = $m->loadMenuItems($_SESSION['playerAdmin']);  
     $this->render['title'] = $m->getActiveName();    
 	}   
  
@@ -35,6 +40,7 @@ class Main {
       $this->get = "login";
     }
     
+		// all pages
 		switch($this->get){
       case '' :
 			case 'inventory': $this->inventory();
@@ -48,17 +54,18 @@ class Main {
 			case 'logs': $this->logs();
 				break;
 			case 'admin': $this->admin();
-				break;
+				break;		
       case 'login': $this->login();
 				break;
       case 'logout': $this->logout();
 				break;
 			default: $this->errorPage(404);
-		}
-		
-    // all templates are in figure filename.tpl
-    $this->tpl .= ".tpl";  
+		} 	
   }
+	
+	private function addFileExtension(){
+    $this->tpl .= ".tpl";  						
+	}
 
   
   private function inventory(){
@@ -88,6 +95,11 @@ class Main {
   }
   
   private function admin(){
+		if($_SESSION['playerAdmin'] == 0){
+			$this->errorPage(404);		
+			return;	
+		}
+		
     $this->tpl = "admin";
   }
 

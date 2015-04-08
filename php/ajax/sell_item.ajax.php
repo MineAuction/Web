@@ -1,7 +1,1 @@
-<?php
-  $itemID = intVal($_POST['item_id']);
-  $itemSID = intVal($_POST['item_subid']);
-  $qty = intVal($_POST['qty']);
-  
-  $inventory = new Inventory();
-  $inventory -> sellItem($_SESSION['playerId'], $itemID, $itemSID, $qty);
+<?php  require_once '../../config.inc.php';  require_once '../Inventory.class.php';	// read $_GET  $itemID = intVal(@$_GET['item_id']);  $itemSID = intVal(@$_GET['item_subid']);  $qty = intVal(@$_GET['qty']);	$price = floatVal(str_replace(",", ".", @$_GET['price']));  // sell  $inventory = new Inventory($_SESSION['playerId']);  $out = $inventory -> sellItem($itemID, $itemSID, $qty, $price);			echo $out;
