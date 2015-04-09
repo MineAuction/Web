@@ -13,12 +13,15 @@ class Main {
 	/** Array of values to templates */
 	public $render = array();
 	
+	private $locale;
+	
 	/**
 	 * Main application method
 	 * !!! No edit !!!
 	 */
   public function __construct() {
     $this->get = @$_GET['page'];   
+		$this->setLang($GLOBALS['locale']);
     $this->selectPage();
 		$this->addFileExtension();
     $m = new Menu($this->get);
@@ -27,8 +30,12 @@ class Main {
 	  $this->render['session'] = @$_SESSION;  
     $this->render['settings'] = $GLOBALS['settings'];
     $this->render['menu'] = $m->loadMenuItems($_SESSION['playerAdmin']);  
-    $this->render['title'] = $m->getActiveName();    
-	}   
+    $this->render['title'] = $m->getActiveName(); 
+	}  
+
+	public function setLang($locale){
+		$this->locale = $locale;
+	}
  
   
   /**
@@ -55,14 +62,17 @@ class Main {
 				break;
 			case 'admin': $this->admin();
 				break;		
-      case 'login': $this->login();
+      case 'login': $this->logIn();
 				break;
-      case 'logout': $this->logout();
+      case 'logout': $this->logOut();
 				break;
-			default: $this->errorPage(404);
+			default: $this->errorPage();
 		} 	
   }
 	
+	/**
+	 * Add .tpl extension to actually rendering file
+	 */
 	private function addFileExtension(){
     $this->tpl .= ".tpl";  						
 	}
@@ -95,20 +105,21 @@ class Main {
   }
   
   private function admin(){
+		# permission
 		if($_SESSION['playerAdmin'] == 0){
-			$this->errorPage(404);		
+			$this->errorPage();		
 			return;	
 		}
 		
     $this->tpl = "admin";
   }
 
-  private function login(){
+  private function logIn(){
     $this->tpl = "login";
     
     if($_POST){
       if(Auth::login($_POST['username'], $_POST['password'])){
-      Logger::info("Login", "Uzivatel " .  $_POST['username'] . " uspěšně přihlášen." );
+				Logger::info("Login", "Uzivatel " .  $_POST['username'] . " uspěšně přihlášen." );
         header("location: ?page=inventory");
         
         $this->tpl = "inventory";
@@ -118,14 +129,14 @@ class Main {
       }
     }
   }
-  private function logout(){
+  private function logOut(){
       $this->tpl = "login";
       $this->render['error'] = "Úspěšně odhlášeno";
       Auth::logout();
   }
 
   
-  private function errorPage($error){
+  private function errorPage($error = 404){
     $this->tpl = "error";
     $this->render['error'] = $error;
   }
@@ -138,45 +149,7 @@ class Main {
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-	
-	/**
-	 * Prihlaseni do systemu
-	 */
-	private function prihlaseni(){
-		$this->tpl = "login";
-		
-		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$ucet = new Ucet($this->db);
-			$res = $ucet->logIn($_POST['jmeno'], $_POST['heslo']);
-			
-			if ($res != FALSE) {
-				header("Location: index.php?page=index");
-				$this->tpl = "index";
-			} else {
-				$this->render['error'] = "Přihlášení do systému bylo neúspěšné";
-			}
-		}
-	}
-	
-	/**
-	 * Odhlaseni ze systemu
-	 */
-	private function odhlaseni() {
-		$this->tpl = "odhlasit";
-		$this->render['error'] = "Odhlášení proběhlo úspěšně <a href='index.php?page=login'>Přihlásit se</a>";
-		Ucet::logOut();
-	}
+
 	
 	
 	/**

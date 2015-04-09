@@ -3,6 +3,7 @@
   require_once 'twig/lib/Twig/Autoloader.php';
   require_once 'php/lib/LoadClass.php';
  
+	// load all files in directory php
   spl_autoload_register("LoadClass");
 	/**
 	 * Pripravi sablonovaci system Twig; udajne bez cachovani

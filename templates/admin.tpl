@@ -1,5 +1,3 @@
 {% extends "index.tpl" %}
-
-{% block content %}
-  admin
+{% block content %}	<h1>{{ lang.admin }}</h1>
 {% endblock %}

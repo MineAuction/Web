@@ -8,7 +8,7 @@ class Money{
 
   private $column_money = "monej";
 
-  private $table_name = "aukce_ajconomy";
+  private $table_name = "";
 
   private $database_name = "";
 
@@ -48,7 +48,7 @@ class Money{
 
     
 
-    //DB::connect('');
+    DB::connect();
 
     return $ret[$this->column_money];
 

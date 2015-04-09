@@ -58,7 +58,7 @@
 {% block javascript %}{% endblock %}
 
 
-<div id="dialog-message" title="Chyba při prodeji" style='display: none;'>
+<div id="dialog-message" title="Zpráva o prodeji" style='display: none;'>
   <p>
     <span class="ui-icon ui-icon-closethick" style="float:left; margin:0 7px 50px 0;"></span>
     <span id='window_message'></span>
