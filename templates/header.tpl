@@ -15,17 +15,24 @@
 
         <div class="nav-collapse"> 
           <ul class="nav pull-right">                  
-            {% if session.playerId %}
+            {% if session.playerID %}
+              <li>
+                 <a class="dropdown-toggle"><i class="icon-credit-card"></i> {{ player_money }} {{ settings.currency }}</a>              
+              </li>
               <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {{ session.playerName }}<b class="caret"></b></a>
                 <ul class="dropdown-menu">  
-                  <li><a href="">Profile</a></li>  
+                  <li><a href="index.php?page=settings">Setttings</a></li>  
                   <li><a href="index.php?page=logout">Logout</a></li>  
                 </ul>   
-              </li>  					
-            {% else %}
+              </li> 
+            {% elseif pageURL != "faq" %}
               <li class="">						
-  						  <a href="signup.html" class="">Don't have an account?</a>
+  						  <a href="index.php?page=faq" class=""><i class='icon-comment'></i> FAQ</a>
   						</li>
+						{% else %}
+							<li class="">						
+								<a href="index.php?page=login" class=""><i class='icon-key'></i> Login</a>
+							</li>
             {% endif %} 
           </ul>  
         </div>  				

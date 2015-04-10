@@ -6,19 +6,17 @@
 <body>
 
   {% embed "header.tpl" %}{% endembed %} 
-  {% embed "menu.tpl" %}{% endembed %}
-
-	{% if error is not null %}
-		<div class="row">
-		  <div class="col-md-8 col-md-offset-2">              
-		    <div class="alert alert-danger" role='alert'><strong>Chyba!</strong> {{ error|raw }}!</div>
-		  </div>
-		</div>     
-	{% endif %} 
+  {% embed "menu.tpl" %}{% endembed %} 
 
 <div class="main">
   <div class="main-inner">
     <div class="container">
+		
+		{% if error is not null %}
+
+
+		    
+		{% endif %}
 		{% block content %}{% endblock %}
     </div>
     <!-- /container -->
@@ -27,25 +25,6 @@
 </div>
 <!-- /main -->
 
-
-<div class="footer">
-  <div class="footer-inner">
-    <div class="container">
-      <div class="row">
-        <div class="span12">{{ settings.authors }}</div>
-      </div>
-      <!-- /row -->
-    </div>
-    <!-- /container -->
-  </div>
-  <!-- /footer-inner -->
-</div>
-<!-- /footer --> 
-
-
-<!-- JavaScript
-
-================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
 <script src="/bootstrap/js/jquery-1.7.2.min.js"></script>
 <script src="/bootstrap/js/excanvas.min.js"></script> 

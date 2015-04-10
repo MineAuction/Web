@@ -31,6 +31,10 @@ class Main {
     $this->render['settings'] = $GLOBALS['settings'];
     $this->render['menu'] = $m->loadMenuItems($_SESSION['playerAdmin']);  
     $this->render['title'] = $m->getActiveName(); 
+		$this->render['pageURL'] = $this->get;
+    
+    $money = new Money();
+    $this->render['player_money'] = number_format($money->getMoney($_SESSION['playerUUID']), 2, '.', ' ');
 	}  
 
 	public function setLang($locale){
@@ -43,8 +47,12 @@ class Main {
    */     
   private function selectPage(){
     // if player is not logged
-    if(!isSet($_SESSION['playerId'])){
-      $this->get = "login";
+    if(!isSet($_SESSION['playerID'])){
+      if($this->get == "faq"){
+        $this->get = "faq";
+      }else{
+        $this->get = "login";
+      }
     }
     
 		// all pages
@@ -64,7 +72,11 @@ class Main {
 				break;		
       case 'login': $this->logIn();
 				break;
+        case 'settings': $this->settings();
+				break;
       case 'logout': $this->logOut();
+				break;
+        case 'faq': $this->faq();
 				break;
 			default: $this->errorPage();
 		} 	
@@ -81,18 +93,22 @@ class Main {
   private function inventory(){
     $this->tpl = "inventory";
     
-    $money = new Money();
-    $this->render['player_money'] = $money->getMoney($_SESSION['playerUUID']);
-    $this->render['inv'] = Player::inv($_SESSION['playerId']);
+    $this->render['inv'] = Player::inv($_SESSION['playerID']);
   }
   
   private function offer(){
     $this->render['offers'] = Offers::offer();  
     $this->tpl = "offer";
   }
+  private function settings(){
+    $this->tpl = "settings";
+  }
   
   private function demand(){
     $this->tpl = "demand";
+  }
+   private function faq(){
+    $this->tpl = "faq";
   }
   
   private function stats(){

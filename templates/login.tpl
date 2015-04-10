@@ -7,38 +7,31 @@
 <body>
 	{% embed "header.tpl" %}{% endembed %} 
 
+	{% if error is not null %}
+		<div class="alert alert-info">
+			<button type="button" class="close" data-dismiss="alert">&times;</button>
+			<strong>Upozornění:</strong> {{ error|raw }}
+		</div>   
+	{% endif %} 
 
-		{% if error is not null %}
-			<div class="row">
-		  		<div class="span12">              
-		          <div class="alert alert-danger" role='alert'><strong>Chyba!</strong> {{ error|raw }}!</div>
-		    	</div>
-			</div>     
-		{% endif %} 
-
-<div class="account-container">
-	
-	<div class="content clearfix">
-		
-		<form action="#" method="post">
-		
-			<h1>Member Login</h1>		
-			
-			<div class="login-fields">
-				
+<div class="account-container">	
+	<div class="content clearfix">		
+		<form action="#" method="post">		
+			<h1>Member Login</h1>			
+			<div class="login-fields">				
 				<p>Please provide your details</p>
-				
+					
 				<div class="field">
 					<label for="username">Username</label>
 					<input type="text" id="username" name="username" value="" placeholder="Minecraft username" class="login username-field" />
-				</div> <!-- /field -->
+				</div>
 				
 				<div class="field">
 					<label for="password">Password:</label>
 					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field"/>
-				</div> <!-- /password -->
+				</div> 
 				
-			</div> <!-- /login-fields -->
+			</div>
 			
 			<div class="login-actions">
 				
@@ -50,22 +43,30 @@
 				<button class="button btn btn-success btn-large">Sign In</button>
 				
 			</div> <!-- .actions -->
-			
-			
-			
 		</form>
 		
 	</div> <!-- /content -->
 	
 </div> <!-- /account-container -->
+<div class="footer">
+  <div class="footer-inner">
+    <div class="container">
+      <div class="row">
+        <div class="span12">{{ settings.authors }}</div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /footer-inner -->
+</div>
+<!-- /footer --> 
 
 
 
 <script src="/bootstrap/js/jquery-1.7.2.min.js"></script>
 <script src="/bootstrap/js/bootstrap.js"></script>
-
 <script src="/bootstrap/js/signin.js"></script>
 
 </body>
-
 </html>

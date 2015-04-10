@@ -1,12 +1,17 @@
 {% extends "index.tpl" %}
 
-
-
 {% block content %}
  <h1 style="text-alig:center">Nabídky ke koupi</h1>
   <table class="table table-bordered">
     <thead>
-      <tr><td>Prodejce</td><td>Item</td><td>Počet</td><td>Cena 1 itemu</td><td>Cena celkem</td><td>Koupit</td></tr>
+      <tr>
+				<th>Prodejce</th>
+				<th>Item</th>
+				<th>Počet</th>
+				<th>Cena 1 itemu</th>
+				<th>Cena celkem</th>
+				<th>Koupit</th>
+			</tr>
     </thead>
     <tbody>
       {% for item in offers %}

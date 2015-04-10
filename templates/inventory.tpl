@@ -5,21 +5,27 @@
 {% endblock %}
 
 {% block content %}
-  <h1 style="text-alig:center">Tvůj inventář - Máš : {{ player_money }}</h1>
+  <h1 style="text-alig:center">Tvůj inventář</h1>
   <table class="table table-bordered" id='table_inventory'>
     <thead>
-      <tr><td>Item</td><td>Počet</td><td style='width: 350px;'>Prodat</td></tr>
+      <tr>
+				<th>Předmět</th>
+				<th>Máš kusů</th>
+				<th>Max cena</th>
+				<th style='width: 350px;'>Prodat</th>
+			</tr>
     </thead>
     <tbody>
     
     {% for item in inv %}
       <tr>
         <td>
-		  <input type='hidden' class='item_id' value='{{item.itemId}}'>
-		  <input type='hidden' class='item_subid' value='{{item.itemDamage}}'>
-		  <img src='../ikony/{{item.img}}' alt='{{item.name}}' class="img1">{{item.name}}
-		</td>
-        <td class='click_max items_qty'>{{item.qty}}</td>
+          <input type='hidden' class='item_id' value='{{item.itemId}}'>
+          <input type='hidden' class='item_subid' value='{{item.itemDamage}}'>
+          <img src='../ikony/{{item.img}}' alt='{{item.name}}' class="img1">{{ item.name }}
+        </td>
+        <td class='click_max items_qty'>{{ item.qty }}</td>
+				<td></td>
         <td class='to_right'>
           <span class="input-prepend input-append">
             <span class="add-on">ks</span>
@@ -30,7 +36,7 @@
             <input class="span2 input1 items_price" id="appendedPrependedInput" type="text" placeholder='Cena/ks'>
           </span>
           <button class='btn btn-primary sell'>Prodat</button>
-          <button class='btn btn-success' disabled>Dražit</button>
+          <button class='btn btn-success' {{ item.getauction }}>Dražit</button>
         </td>
       </tr>
     {% endfor %}

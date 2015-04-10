@@ -245,3 +245,8 @@ span.login-checkbox > input[type='checkbox']:checked + label {
 	}
 	
 }
+.footer{
+   position:absolute;
+   bottom:0;
+   width:100%;
+}

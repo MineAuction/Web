@@ -31,6 +31,8 @@
   # settings - $GLOBALS - global visibility in project
 	# please don't change this array
   $settings = array();
+	$settings['currency'] = "£"; # £, $, €
+	$settings['maxPrice'] = "140"; // 140 = 140%
   $settings['pageTitle'] = "MineAuction";
   $settings['authors'] = "Web: Sekiphp, DvnBthlo; Java: Sognus";
   $GLOBALS['settings'] = $settings;
