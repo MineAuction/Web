@@ -1,0 +1,50 @@
+<?php
+
+/* auction.tpl */
+class __TwigTemplate_e72d785c423e5487e9bdae3fcf8b99aacd6f0b21d90769e0abd76665c1a575a1 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = $this->env->loadTemplate("index.tpl");
+
+        $this->blocks = array(
+            'content' => array($this, 'block_content'),
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "index.tpl";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_content($context, array $blocks = array())
+    {
+        // line 4
+        echo "\tauction
+
+";
+    }
+
+    public function getTemplateName()
+    {
+        return "auction.tpl";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  31 => 4,  28 => 3,);
+    }
+}

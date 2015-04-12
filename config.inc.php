@@ -1,24 +1,4 @@
 <?php
-	if(!headers_sent()) {		
-		header('Content-Type: text/html; charset=utf-8');		
-	}
-	date_default_timezone_set('Europe/Prague');
-  
-  require_once 'php/lib/DB.class.php';
-	require_once 'php/lib/Locale.php';  
-
-  DB::connect();
-	$locale = new Locale("lang/");
-	$locale->setLocale('cz');
-	$GLOBALS['locale'] = $locale;
-	
-
-  //(session_status() == PHP_SESSION_NONE) //PHP >= 5.4.0
-	if(session_id() == ''){
-		session_start();
-	}
-	
-
 	# name of all tables in database
 	define("TABLE_ITEMS", "ma_items");
   define("TABLE_PLAYERS", "ma_players");
@@ -34,5 +14,28 @@
 	$settings['currency'] = "£"; # £, $, €
 	$settings['maxPrice'] = "140"; // 140 = 140%
   $settings['pageTitle'] = "MineAuction";
-  $settings['authors'] = "Web: Sekiphp, DvnBthlo; Java: Sognus";
   $GLOBALS['settings'] = $settings;
+	
+	
+	# DB config MineAuction
+	$db_ma = array(
+		"server" => "", 
+		"name" => "", 
+		"user" => "", 
+		"pass" => "", 	
+	);
+	
+	# DB config economy plugin
+	# MineAuction need to get data from another plugin
+	$db_economy = array(
+		"server" => "", 
+		"name" => "", 
+		"user" => "", 
+		"pass" => "", 	
+	);	
+	$db_economy_addons = array(
+		"table" => "", 
+		"money" => "", 
+		"uuid" => "", 	
+	);
+	$GLOBALS['economy'] = $db_economy_addons;

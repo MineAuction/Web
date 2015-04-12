@@ -2,7 +2,7 @@
 
 {% block content %}
 	<h1 style="text-alig:center">Log</h1>
-  <table class="table table-bordered" id='table_inventory'>
+  <table class="table table-bordered" id='log'>
     <thead>
       <tr>
 				<th style='width: 100px;'>Time</th>

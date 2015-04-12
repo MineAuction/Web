@@ -1,21 +1,22 @@
 <?php
 class Auth{
   /**
-   * verify player and fill session variables
+   * Verify player and fill session variables
    */
   public static function login($player, $password){
+		$sql = "
+			SELECT * 
+			FROM " . TABLE_PLAYERS . " 
+			WHERE 
+			playerName = :playerName AND 
+			password = :password		
+		";
     $where = array(
       ":playerName" => $player, 
       ":password" => sha1($password), 
     );
    
-    $user = DB::assoc(DB::query("
-      SELECT * 
-      FROM " . TABLE_PLAYERS . " 
-      WHERE 
-      playerName = :playerName AND 
-      password = :password"
-    , $where));
+    $user = DB::assoc(DB::query($sql, $where));
     if(!$user){
       return FALSE;
     }
@@ -25,6 +26,7 @@ class Auth{
       $_SESSION['playerName'] = $user['playerName'];
       $_SESSION['playerMoney'] = $user['money'];
 			$_SESSION['playerAdmin'] = $user['admin'];
+			$_SESSION['playerLang'] = $user['lang'];
       return TRUE;
     }
   }

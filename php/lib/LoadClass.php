@@ -8,7 +8,7 @@
 	 * @last_update: 8.4.2015  
 	 */ 
 	function LoadClass($class_name){
-		$path = 'php/'.$class_name.'.class.php';
+		$path = 'php/' . $class_name . '.class.php';
     if(file_exists($path)) {
 			require_once $path;
     }

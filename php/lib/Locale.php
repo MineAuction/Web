@@ -77,6 +77,12 @@ class Locale{
 
 		return $translation;
 	}
+	
+	public static function getAvailableLangs(){
+		$scan = scandir("/lang");	
+		print_r($scan);
+			
+	}
 
 }
 ?>

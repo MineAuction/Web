@@ -1,5 +1,5 @@
 <?php
-  require_once 'config.inc.php';
+  require_once 'init.inc.php';
   require_once 'twig/lib/Twig/Autoloader.php';
   require_once 'php/lib/LoadClass.php';
  

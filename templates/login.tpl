@@ -52,7 +52,7 @@
   <div class="footer-inner">
     <div class="container">
       <div class="row">
-        <div class="span12">{{ settings.authors }}</div>
+        <div class="span12">&copy; 2015 by Sekiphp, Sognus, DvnBthlo</div>
       </div>
       <!-- /row -->
     </div>

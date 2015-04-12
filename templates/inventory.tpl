@@ -5,13 +5,15 @@
 {% endblock %}
 
 {% block content %}
-  <h1 style="text-alig:center">Tvůj inventář</h1>
-  <table class="table table-bordered" id='table_inventory'>
+
+    
+  <h1>Tvůj inventář</h1>
+  <table class="table table-bordered" id='table_inventory' class="tablesorter">
     <thead>
       <tr>
 				<th>Předmět</th>
 				<th>Máš kusů</th>
-				<th>Max cena</th>
+				<th>Max. cena</th>
 				<th style='width: 350px;'>Prodat</th>
 			</tr>
     </thead>

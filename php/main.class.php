@@ -33,14 +33,16 @@ class Main {
     $this->render['title'] = $m->getActiveName(); 
 		$this->render['pageURL'] = $this->get;
     
-    $money = new Money();
+    $money = new Money($GLOBALS['economy']);
     $this->render['player_money'] = number_format($money->getMoney($_SESSION['playerUUID']), 2, '.', ' ');
 	}  
-
+	
+	/**
+	 * Set language to logged player
+	 */
 	public function setLang($locale){
 		$this->locale = $locale;
-	}
- 
+	} 
   
   /**
    * Select the page according to $_GET['page'] (start others method)    
@@ -69,14 +71,18 @@ class Main {
 			case 'logs': $this->logs();
 				break;
 			case 'admin': $this->admin();
-				break;		
+				break;	
+			case 'items': $this->items_list();
+				break;				
       case 'login': $this->logIn();
 				break;
-        case 'settings': $this->settings();
+			case 'settings': $this->settings();
+				break;
+			case 'auction': $this->auction();
 				break;
       case 'logout': $this->logOut();
 				break;
-        case 'faq': $this->faq();
+       case 'faq': $this->faq();
 				break;
 			default: $this->errorPage();
 		} 	
@@ -98,21 +104,33 @@ class Main {
   
   private function offer(){
     $this->render['offers'] = Offers::offer();  
+     $this->render['myoffers'] = Offers::myoffer();  
     $this->tpl = "offer";
   }
   private function settings(){
     $this->tpl = "settings";
+		Locale::getAvailableLangs();
   }
   
   private function demand(){
     $this->tpl = "demand";
   }
-   private function faq(){
+	
+	private function faq(){
     $this->tpl = "faq";
+  }
+	
+	private function items_list(){
+    $this->tpl = "items";
+		$this->render['items'] = Items::getAll();
   }
   
   private function stats(){
     $this->tpl = "stats";
+  }
+	
+  private function auction(){
+    $this->tpl = "auction";
   }
   
   private function logs(){
