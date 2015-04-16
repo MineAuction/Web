@@ -1,6 +1,20 @@
 <?php
 class Player{
-    public static function inv($playerID){
+	
+	/**
+	 * Update player settings in DB
+	 */
+	public static function updateSettings($playerID){
+		# update language settings
+		
+	}
+	
+	// TODO
+	public static function getSelectedLanguage(){
+						
+	}
+		
+    public static function getInventory($playerID){
       $sql = "
         SELECT 
           il.name, il.img, ip.qty, ip.itemId, ip.itemDamage,  
@@ -20,10 +34,12 @@ class Player{
       //print_r(DB::assocAll($res));
       return DB::assocAll($res);
     }
-       
+    
+			/*
     public static function inOffer($playerID){
         $where = array(":playerID" => $playerID );
       $items = DB::assocAll(DB::query('SELECT * FROM ' . TABLE_OFFERS . ' WHERE playerID = :playerID', $where));
       return $items;
     }
+		*/
 }

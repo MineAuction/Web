@@ -29,7 +29,7 @@ class __TwigTemplate_c089f6eee39415221626b17b3149a474d696a1368efdf641246c07a7b79
     {
         // line 4
         echo "\t<h1 style=\"text-alig:center\">Log</h1>
-  <table class=\"table table-bordered\" id='table_inventory'>
+  <table class=\"table table-bordered\" id='log'>
     <thead>
       <tr>
 \t\t\t\t<th style='width: 100px;'>Time</th>

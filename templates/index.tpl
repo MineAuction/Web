@@ -11,12 +11,6 @@
 <div class="main">
   <div class="main-inner">
     <div class="container">
-		
-		{% if error is not null %}
-
-
-		    
-		{% endif %}
 		{% block content %}{% endblock %}
     </div>
     <!-- /container -->
@@ -47,13 +41,11 @@
 <script src="/bootstrap/js/base.js"></script> 
 <script type="text/javascript" src="/js/shortTable/jquery.tablesorter.js"></script> 
 <script>
-$(document).ready(function() 
-    { 
-        $("#table_inventory").tablesorter({ sortList: [[0,0],[0,0]],  headers:{ 2: { sorter: false }, 3: { sorter: false } }} );
-        $("#offertable").tablesorter({ sortList: [[0,0],[0,0]] ,  headers:{5: { sorter: false } }} ); 
-          $("#log").tablesorter({ sortList: [[0,1],[0,0]] } );
-    } 
-); 
+  $(document).ready(function(){       
+    $("#table_inventory").tablesorter({ sortList: [[0,0],[0,0]],  headers:{ 2: { sorter: false }, 3: { sorter: false } }} );
+    $("#offertable").tablesorter({ sortList: [[0,0],[0,0]] ,  headers:{5: { sorter: false } }} );       
+    $("#log").tablesorter({ sortList: [[0,1],[0,0]] } );
+  }); 
  </script>   
 </body>
 </html>

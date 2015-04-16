@@ -17,9 +17,9 @@
 <div class="account-container">	
 	<div class="content clearfix">		
 		<form action="#" method="post">		
-			<h1>Member Login</h1>			
+			<h1>{{ lang.login_h1 }}</h1>			
 			<div class="login-fields">				
-				<p>Please provide your details</p>
+				<p>{{ lang.login_h2 }}</p>
 					
 				<div class="field">
 					<label for="username">Username</label>
@@ -33,15 +33,8 @@
 				
 			</div>
 			
-			<div class="login-actions">
-				
-				<span class="login-checkbox">
-					<input id="Field" name="Field" type="checkbox" class="field login-checkbox" value="First Choice" tabindex="4" />
-					<label class="choice" for="Field">Keep me signed in(future)</label>
-				</span>
-									
-				<button class="button btn btn-success btn-large">Sign In</button>
-				
+			<div class="login-actions">								
+				<button class="button btn btn-success btn-large">{{ lang.login_butt }}</button>				
 			</div> <!-- .actions -->
 		</form>
 		

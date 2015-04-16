@@ -29,8 +29,6 @@ class Locale{
   public function setLocale($lang){
     $this -> lang = $lang;
 		$this -> existLang();
-		
-		echo "kokos".$this->lang;
   }
 	
 	/**

@@ -7,12 +7,12 @@
  */ 
 class Main {
 	/** $_GET['page'] from URL */
-	private $get = NULL;
+	private $get;
 	/** Name of template to show */
-	public $tpl = NULL;
+	public $tpl;
 	/** Array of values to templates */
 	public $render = array();
-	
+	/** User language */
 	private $locale;
 	
 	/**
@@ -20,21 +20,12 @@ class Main {
 	 * !!! No edit !!!
 	 */
   public function __construct() {
-    $this->get = @$_GET['page'];   
-		$this->setLang($GLOBALS['locale']);
-    $this->selectPage();
-		$this->addFileExtension();
-    $m = new Menu($this->get);
-    
-    // variables to twig template
-	  $this->render['session'] = @$_SESSION;  
-    $this->render['settings'] = $GLOBALS['settings'];
-    $this->render['menu'] = $m->loadMenuItems($_SESSION['playerAdmin']);  
-    $this->render['title'] = $m->getActiveName(); 
-		$this->render['pageURL'] = $this->get;
-    
-    $money = new Money($GLOBALS['economy']);
-    $this->render['player_money'] = number_format($money->getMoney($_SESSION['playerUUID']), 2, '.', ' ');
+    $this -> get = @$_GET['page'];   
+		$this -> setLang($GLOBALS['locale']);
+		
+		$this -> setRenderParams();
+    $this -> selectPage();
+		$this -> addFileExtension();
 	}  
 	
 	/**
@@ -42,7 +33,23 @@ class Main {
 	 */
 	public function setLang($locale){
 		$this->locale = $locale;
+    $this->render['lang'] = $locale->getTable(); 
 	} 
+	
+	/**
+	 * Bind variables to twig template
+	 */
+	private function setRenderParams(){
+		$menu = new Menu($this->get);
+		$money = new Money($GLOBALS['economy']);
+			
+	  $this -> render['session'] = @$_SESSION;  
+    $this -> render['settings'] = $GLOBALS['settings'];
+    $this -> render['menu'] = $menu->loadMenuItems($_SESSION['playerAdmin'], $this->locale->lang);  
+    $this -> render['title'] = $menu->getActiveName(); 
+		$this -> render['pageURL'] = $this->get;
+		$this -> render['player_money'] = number_format($money->getMoney($_SESSION['playerUUID']), 2, '.', ' ');
+	}
   
   /**
    * Select the page according to $_GET['page'] (start others method)    
@@ -50,11 +57,7 @@ class Main {
   private function selectPage(){
     // if player is not logged
     if(!isSet($_SESSION['playerID'])){
-      if($this->get == "faq"){
-        $this->get = "faq";
-      }else{
-        $this->get = "login";
-      }
+			$this->get = ($this->get == "faq") ? "faq" : "login";
     }
     
 		// all pages
@@ -99,7 +102,7 @@ class Main {
   private function inventory(){
     $this->tpl = "inventory";
     
-    $this->render['inv'] = Player::inv($_SESSION['playerID']);
+    $this->render['inv'] = Player::getInventory($_SESSION['playerID']);
   }
   
   private function offer(){
@@ -109,7 +112,11 @@ class Main {
   }
   private function settings(){
     $this->tpl = "settings";
-		Locale::getAvailableLangs();
+		//Locale::getAvailableLangs();
+		
+		if($_POST){
+			Player::setSettings($_SESSION['playerID']);
+		}
   }
   
   private function demand(){
@@ -117,7 +124,8 @@ class Main {
   }
 	
 	private function faq(){
-    $this->tpl = "faq";
+    $this -> tpl = "faq";
+		$this -> render['title'] = "FAQ";
   }
 	
 	private function items_list(){
@@ -150,6 +158,7 @@ class Main {
 
   private function logIn(){
     $this->tpl = "login";
+		$this -> render['title'] = "";
     
     if($_POST){
       if(Auth::login($_POST['username'], $_POST['password'])){
@@ -174,28 +183,4 @@ class Main {
     $this->tpl = "error";
     $this->render['error'] = $error;
   }
-
-  
-  
-  
-  
-  
-  
-  
-  
-
-	
-	
-	/**
-	 * Logika pro domovskou uvodni stranku po prihlaseni
-	 */
-	private function domovskaStranka(){
-		$this->tpl = "index";
-		
-		if(!$_SESSION){
-			die("Nejste přihlášen do systému! <a href='index.php?page=login'>Přihlaš se!</a>");
-		}
-
-	}
-	
 }

@@ -2,7 +2,6 @@
   require_once 'init.inc.php';
   require_once 'twig/lib/Twig/Autoloader.php';
   require_once 'php/lib/LoadClass.php';
- 
 	# require all files in directory php except file in sub-directories
   spl_autoload_register("LoadClass");
 

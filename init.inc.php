@@ -13,7 +13,7 @@
 	require_once 'config.inc.php';
 	require_once 'php/lib/DB.class.php';
 	require_once 'php/lib/DB2.class.php';
-	require_once 'php/lib/Locale.php';  
+	require_once 'php/lib/Locale.class.php';  
 	
 	# connect to DBs (auction & economy plugin)
 	DB::connect($db_ma);
@@ -21,6 +21,6 @@
 
 	# languages
 	$locale = new Locale("lang/");
-	$locale->setLocale('cz');
+	$locale->setLocale($GLOBALS['settings']['default_lang']);
 	$GLOBALS['locale'] = $locale;
 	

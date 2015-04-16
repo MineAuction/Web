@@ -3,7 +3,7 @@ $(document).ready(function(){
 	$("#buy_item").autocomplete({
 		source: function(request, response) {
 			$.ajax({
-				url: "http://aukce.lostwar.cz/php/ajax/get_items_list.ajax.php?find=" + $("#buy_item").val() + "",
+				url: "/php/ajax/get_items_list.ajax.php?find=" + $("#buy_item").val() + "",
 				dataType: "json",
 				data: {
 					q: request.term

@@ -17,118 +17,19 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
     {
         // line 1
         echo "<!DOCTYPE html>
-
 <html lang=\"en\">
-
-  
-
-<head>
-
-    <meta charset=\"utf-8\">
-
-    <title>404 - Bootstrap Admin Template</title>
-
-
-
-\t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no\">
-
-    <meta name=\"apple-mobile-web-app-capable\" content=\"yes\"> 
-
-\t    
-
-\t<link href=\"/bootstrap/css/bootstrap.min.css\" rel=\"stylesheet\" type=\"text/css\" />
-
-\t<link href=\"/bootstrap/css/css/bootstrap-responsive.min.css\" rel=\"stylesheet\" type=\"text/css\" />
-
-\t
-
-\t<link href=\"/bootstrap/css/font-awesome.css\" rel=\"stylesheet\">
-
-\t    <link href=\"http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600\" rel=\"stylesheet\">
-
-\t    
-
-\t<link href=\"/bootstrap/css/style.css\" rel=\"stylesheet\" type=\"text/css\" />
-
-
-
-</head>
-
-
-
+  <head>
+    ";
+        // line 4
+        $this->env->loadTemplate("error.tpl", "2011757397")->display($context);
+        echo " 
+  </head>
 <body>
 
-\t
-
-\t<div class=\"navbar navbar-fixed-top\">
-
-\t
-
-\t<div class=\"navbar-inner\">
-
-\t\t
-
-\t\t<div class=\"container\">
-
-\t\t\t
-
-\t\t\t<a class=\"btn btn-navbar\" data-toggle=\"collapse\" data-target=\".nav-collapse\">
-
-\t\t\t\t<span class=\"icon-bar\"></span>
-
-\t\t\t\t<span class=\"icon-bar\"></span>
-
-\t\t\t\t<span class=\"icon-bar\"></span>
-
-\t\t\t</a>
-
-\t\t\t
-
-\t\t\t<a class=\"brand\" href=\"index.html\">
-
-\t\t\t\tBootstrap Admin Template\t\t\t\t
-
-\t\t\t</a>\t\t
-
-\t\t\t
-
-\t\t\t<div class=\"nav-collapse\">
-
-\t\t\t\t<ul class=\"nav pull-right\">
-
-\t\t\t\t\t
-
-\t\t\t\t\t<li class=\"\">\t\t\t\t\t\t
-
-\t\t\t\t\t\t<a href=\"index.html\" class=\"\">
-
-\t\t\t\t\t\t\t<i class=\"icon-chevron-left\"></i>
-
-\t\t\t\t\t\t\tBack to Dashboard
-
-\t\t\t\t\t\t</a>
-
-\t\t\t\t\t\t
-
-\t\t\t\t\t</li>
-
-\t\t\t\t</ul>
-
-\t\t\t\t
-
-\t\t\t</div><!--/.nav-collapse -->\t
-
-\t
-
-\t\t</div> <!-- /container -->
-
-\t\t
-
-\t</div> <!-- /navbar-inner -->
-
-\t
-
-</div> <!-- /navbar -->
+";
+        // line 8
+        $this->env->loadTemplate("error.tpl", "1680679676")->display($context);
+        echo " 
 
 
 
@@ -151,7 +52,7 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 \t\t\t<div class=\"error-container\">
 
 \t\t\t\t<h1>";
-        // line 135
+        // line 30
         if (isset($context["error"])) { $_error_ = $context["error"]; } else { $_error_ = null; }
         echo twig_escape_filter($this->env, $_error_, "html", null, true);
         echo "</h1>
@@ -191,21 +92,9 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 \t\t\t\t\t
 
 \t\t\t\t</div> <!-- /error-actions -->
-
-\t\t\t\t\t\t\t
-
 \t\t\t</div> <!-- /error-container -->\t\t\t
-
-\t\t\t
-
 \t\t</div> <!-- /span12 -->
-
-\t\t
-
 \t</div> <!-- /row -->
-
-\t
-
 </div> <!-- /container -->
 
 
@@ -213,18 +102,12 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 
 
 <script src=\"js/jquery-1.7.2.min.js\"></script>
-
 <script src=\"js/bootstrap.js\"></script>
 
 
 
 </body>
-
-
-
-</html>
-
-";
+</html>";
     }
 
     public function getTemplateName()
@@ -239,6 +122,86 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 
     public function getDebugInfo()
     {
-        return array (  155 => 135,  19 => 1,);
+        return array (  56 => 30,  31 => 8,  24 => 4,  19 => 1,);
+    }
+}
+
+
+/* error.tpl */
+class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e9e34e_2011757397 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = $this->env->loadTemplate("html_head.tpl");
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "html_head.tpl";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    public function getTemplateName()
+    {
+        return "error.tpl";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  56 => 30,  31 => 8,  24 => 4,  19 => 1,);
+    }
+}
+
+
+/* error.tpl */
+class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e9e34e_1680679676 extends Twig_Template
+{
+    public function __construct(Twig_Environment $env)
+    {
+        parent::__construct($env);
+
+        $this->parent = $this->env->loadTemplate("header.tpl");
+
+        $this->blocks = array(
+        );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "header.tpl";
+    }
+
+    protected function doDisplay(array $context, array $blocks = array())
+    {
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    public function getTemplateName()
+    {
+        return "error.tpl";
+    }
+
+    public function isTraitable()
+    {
+        return false;
+    }
+
+    public function getDebugInfo()
+    {
+        return array (  56 => 30,  31 => 8,  24 => 4,  19 => 1,);
     }
 }

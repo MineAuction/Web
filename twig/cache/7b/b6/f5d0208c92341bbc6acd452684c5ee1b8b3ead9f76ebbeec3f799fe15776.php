@@ -21,14 +21,14 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
   <head>
     ";
         // line 4
-        $this->env->loadTemplate("login.tpl", "1368887915")->display($context);
+        $this->env->loadTemplate("login.tpl", "673605523")->display($context);
         echo " 
     <link href=\"/bootstrap/css/pages/signin.css\" rel=\"stylesheet\" type=\"text/css\">
   </head>
 <body>
 \t";
         // line 8
-        $this->env->loadTemplate("login.tpl", "96809138")->display($context);
+        $this->env->loadTemplate("login.tpl", "195167298")->display($context);
         echo " 
 
 \t";
@@ -52,9 +52,17 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 <div class=\"account-container\">\t
 \t<div class=\"content clearfix\">\t\t
 \t\t<form action=\"#\" method=\"post\">\t\t
-\t\t\t<h1>Member Login</h1>\t\t\t
+\t\t\t<h1>";
+        // line 20
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "login_h1", array()), "html", null, true);
+        echo "</h1>\t\t\t
 \t\t\t<div class=\"login-fields\">\t\t\t\t
-\t\t\t\t<p>Please provide your details</p>
+\t\t\t\t<p>";
+        // line 22
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "login_h2", array()), "html", null, true);
+        echo "</p>
 \t\t\t\t\t
 \t\t\t\t<div class=\"field\">
 \t\t\t\t\t<label for=\"username\">Username</label>
@@ -68,15 +76,12 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 \t\t\t\t
 \t\t\t</div>
 \t\t\t
-\t\t\t<div class=\"login-actions\">
-\t\t\t\t
-\t\t\t\t<span class=\"login-checkbox\">
-\t\t\t\t\t<input id=\"Field\" name=\"Field\" type=\"checkbox\" class=\"field login-checkbox\" value=\"First Choice\" tabindex=\"4\" />
-\t\t\t\t\t<label class=\"choice\" for=\"Field\">Keep me signed in(future)</label>
-\t\t\t\t</span>
-\t\t\t\t\t\t\t\t\t
-\t\t\t\t<button class=\"button btn btn-success btn-large\">Sign In</button>
-\t\t\t\t
+\t\t\t<div class=\"login-actions\">\t\t\t\t\t\t\t\t
+\t\t\t\t<button class=\"button btn btn-success btn-large\">";
+        // line 37
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "login_butt", array()), "html", null, true);
+        echo "</button>\t\t\t\t
 \t\t\t</div> <!-- .actions -->
 \t\t</form>
 \t\t
@@ -87,11 +92,7 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
   <div class=\"footer-inner\">
     <div class=\"container\">
       <div class=\"row\">
-        <div class=\"span12\">";
-        // line 55
-        if (isset($context["settings"])) { $_settings_ = $context["settings"]; } else { $_settings_ = null; }
-        echo twig_escape_filter($this->env, $this->getAttribute($_settings_, "authors", array()), "html", null, true);
-        echo "</div>
+        <div class=\"span12\">&copy; 2015 by Sekiphp, Sognus, DvnBthlo</div>
       </div>
       <!-- /row -->
     </div>
@@ -123,13 +124,13 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 
     public function getDebugInfo()
     {
-        return array (  92 => 55,  50 => 15,  43 => 13,  39 => 11,  36 => 10,  31 => 8,  24 => 4,  19 => 1,);
+        return array (  82 => 37,  63 => 22,  57 => 20,  50 => 15,  43 => 13,  39 => 11,  36 => 10,  31 => 8,  24 => 4,  19 => 1,);
     }
 }
 
 
 /* login.tpl */
-class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_1368887915 extends Twig_Template
+class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_673605523 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -163,13 +164,13 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 
     public function getDebugInfo()
     {
-        return array (  92 => 55,  50 => 15,  43 => 13,  39 => 11,  36 => 10,  31 => 8,  24 => 4,  19 => 1,);
+        return array (  82 => 37,  63 => 22,  57 => 20,  50 => 15,  43 => 13,  39 => 11,  36 => 10,  31 => 8,  24 => 4,  19 => 1,);
     }
 }
 
 
 /* login.tpl */
-class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_96809138 extends Twig_Template
+class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_195167298 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -203,6 +204,6 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 
     public function getDebugInfo()
     {
-        return array (  92 => 55,  50 => 15,  43 => 13,  39 => 11,  36 => 10,  31 => 8,  24 => 4,  19 => 1,);
+        return array (  82 => 37,  63 => 22,  57 => 20,  50 => 15,  43 => 13,  39 => 11,  36 => 10,  31 => 8,  24 => 4,  19 => 1,);
     }
 }

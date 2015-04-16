@@ -23,38 +23,27 @@ class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55a
   <head>
     ";
         // line 4
-        $this->env->loadTemplate("index.tpl", "917086013")->display($context);
+        $this->env->loadTemplate("index.tpl", "541354816")->display($context);
         echo " 
   </head>
 <body>
 
   ";
         // line 8
-        $this->env->loadTemplate("index.tpl", "2002851060")->display($context);
+        $this->env->loadTemplate("index.tpl", "1303670981")->display($context);
         echo " 
   ";
         // line 9
-        $this->env->loadTemplate("index.tpl", "504690615")->display($context);
+        $this->env->loadTemplate("index.tpl", "248205051")->display($context);
         echo " 
 
 <div class=\"main\">
   <div class=\"main-inner\">
     <div class=\"container\">
-\t\t
 \t\t";
-        // line 15
-        if (isset($context["error"])) { $_error_ = $context["error"]; } else { $_error_ = null; }
-        if ((!(null === $_error_))) {
-            // line 16
-            echo "
-
-\t\t    
-\t\t";
-        }
-        // line 20
-        echo "\t\t";
+        // line 14
         $this->displayBlock('content', $context, $blocks);
-        // line 21
+        // line 15
         echo "    </div>
     <!-- /container -->
   </div>
@@ -72,9 +61,9 @@ class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55a
 <link href=\"/js/jquery_ui/jquery-ui.css\" rel=\"stylesheet\">
 
 ";
-        // line 37
+        // line 31
         $this->displayBlock('javascript', $context, $blocks);
-        // line 38
+        // line 32
         echo "
 
 <div id=\"dialog-message\" title=\"Zpráva o prodeji\" style='display: none;'>
@@ -85,17 +74,25 @@ class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55a
 </div>
 
 <script src=\"/bootstrap/js/base.js\"></script> 
-
+<script type=\"text/javascript\" src=\"/js/shortTable/jquery.tablesorter.js\"></script> 
+<script>
+  \$(document).ready(function(){       
+    \$(\"#table_inventory\").tablesorter({ sortList: [[0,0],[0,0]],  headers:{ 2: { sorter: false }, 3: { sorter: false } }} );
+    \$(\"#offertable\").tablesorter({ sortList: [[0,0],[0,0]] ,  headers:{5: { sorter: false } }} );       
+    \$(\"#log\").tablesorter({ sortList: [[0,1],[0,0]] } );
+  }); 
+ </script>   
 </body>
-</html>";
+</html>
+";
     }
 
-    // line 20
+    // line 14
     public function block_content($context, array $blocks = array())
     {
     }
 
-    // line 37
+    // line 31
     public function block_javascript($context, array $blocks = array())
     {
     }
@@ -112,13 +109,13 @@ class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55a
 
     public function getDebugInfo()
     {
-        return array (  99 => 37,  94 => 20,  78 => 38,  76 => 37,  58 => 21,  55 => 20,  49 => 16,  46 => 15,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
+        return array (  96 => 31,  91 => 14,  67 => 32,  65 => 31,  47 => 15,  45 => 14,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
     }
 }
 
 
 /* index.tpl */
-class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55aa0eea_917086013 extends Twig_Template
+class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55aa0eea_541354816 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -152,13 +149,13 @@ class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55a
 
     public function getDebugInfo()
     {
-        return array (  99 => 37,  94 => 20,  78 => 38,  76 => 37,  58 => 21,  55 => 20,  49 => 16,  46 => 15,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
+        return array (  96 => 31,  91 => 14,  67 => 32,  65 => 31,  47 => 15,  45 => 14,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
     }
 }
 
 
 /* index.tpl */
-class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55aa0eea_2002851060 extends Twig_Template
+class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55aa0eea_1303670981 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -192,13 +189,13 @@ class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55a
 
     public function getDebugInfo()
     {
-        return array (  99 => 37,  94 => 20,  78 => 38,  76 => 37,  58 => 21,  55 => 20,  49 => 16,  46 => 15,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
+        return array (  96 => 31,  91 => 14,  67 => 32,  65 => 31,  47 => 15,  45 => 14,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
     }
 }
 
 
 /* index.tpl */
-class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55aa0eea_504690615 extends Twig_Template
+class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55aa0eea_248205051 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -232,6 +229,6 @@ class __TwigTemplate_c973a3da20c4ce9279a116b1fca4292c5a66e7a060f7a7935082ea3f55a
 
     public function getDebugInfo()
     {
-        return array (  99 => 37,  94 => 20,  78 => 38,  76 => 37,  58 => 21,  55 => 20,  49 => 16,  46 => 15,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
+        return array (  96 => 31,  91 => 14,  67 => 32,  65 => 31,  47 => 15,  45 => 14,  37 => 9,  33 => 8,  26 => 4,  21 => 1,);
     }
 }

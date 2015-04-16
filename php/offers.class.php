@@ -6,7 +6,7 @@ class Offers{
 		// TODO: databazovy view nefunguje z neznamych pricin
 		$sql = "
 			SELECT ip.id AS offerId, p.playerName, p.id AS playerID, il.name, il.img, ip.qty, ip.price, ip.qty*ip.price AS priceAll, ip.itemId, ip.itemDamage    
-			FROM items_list AS il 
+			FROM " . TABLE_ITEMS_LIST . " AS il 
 			INNER JOIN ma_offers AS ip 
 			INNER JOIN ma_players AS p 
 			ON ip.itemID = il.itemID AND ip.itemDamage = il.itemSubID AND p.id = ip.playerID 
@@ -23,7 +23,7 @@ class Offers{
 		// TODO: databazovy view nefunguje z neznamych pricin
 		$sql = "
 			SELECT ip.id AS offerId, p.playerName, p.id AS playerID, il.name, il.img, ip.qty, ip.price, ip.qty*ip.price AS priceAll, ip.itemId, ip.itemDamage    
-			FROM items_list AS il 
+			FROM " . TABLE_ITEMS_LIST . " AS il 
 			INNER JOIN ma_offers AS ip 
 			INNER JOIN ma_players AS p 
 			ON ip.itemID = il.itemID AND ip.itemDamage = il.itemSubID AND p.id = ip.playerID 
