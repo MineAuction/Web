@@ -21,19 +21,19 @@
 	
 	# DB config MineAuction
 	$db_ma = array(
-		"server" => "wm48.wedos.net", 
-		"name" => "d9350_netg2", 
-		"user" => "a9350_netg2", 
-		"pass" => "belinabelina", 	
+		"server" => "", 
+		"name" => "", 
+		"user" => "", 
+		"pass" => "", 	
 	);
 	
 	# DB config economy plugin
 	# MineAuction need to get data from another plugin
 	$db_economy = array(
-		"server" => "lukas.jinonice.cz", 
-		"name" => "c2eshop", 
-		"user" => "c2lukas", 
-		"pass" => "belina", 	
+		"server" => "", 
+		"name" => "", 
+		"user" => "", 
+		"pass" => "", 	
 	);	
 	$db_economy_addons = array(
 		"table" => "aukce_ajconomy", 
