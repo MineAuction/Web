@@ -21,14 +21,14 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
   <head>
     ";
         // line 4
-        $this->env->loadTemplate("error.tpl", "2011757397")->display($context);
+        $this->env->loadTemplate("error.tpl", "1851991527")->display($context);
         echo " 
   </head>
 <body>
 
 ";
         // line 8
-        $this->env->loadTemplate("error.tpl", "1680679676")->display($context);
+        $this->env->loadTemplate("error.tpl", "1569193384")->display($context);
         echo " 
 
 
@@ -65,7 +65,7 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 
 \t\t\t\t<div class=\"error-details\">
 
-\t\t\t\t\tSorry, an error has occured! Why not try going back to the <a href=\"index.html\">home page</a> or perhaps try following!
+\t\t\t\t\tSorry, an error has occured! Why not try going back to the <a href=\"index.php\">home page</a> or perhaps try following!
 
 \t\t\t\t\t
 
@@ -75,7 +75,7 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 
 \t\t\t\t<div class=\"error-actions\">
 
-\t\t\t\t\t<a href=\"index.html\" class=\"btn btn-large btn-primary\">
+\t\t\t\t\t<a href=\"index.php\" class=\"btn btn-large btn-primary\">
 
 \t\t\t\t\t\t<i class=\"icon-chevron-left\"></i>
 
@@ -128,7 +128,7 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 
 
 /* error.tpl */
-class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e9e34e_2011757397 extends Twig_Template
+class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e9e34e_1851991527 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -168,7 +168,7 @@ class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e
 
 
 /* error.tpl */
-class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e9e34e_1680679676 extends Twig_Template
+class __TwigTemplate_f17f540d6828366ed9ba09a079b0d84987e86227c2d128092baeed2505e9e34e_1569193384 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {

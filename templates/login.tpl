@@ -23,12 +23,12 @@
 					
 				<div class="field">
 					<label for="username">Username</label>
-					<input type="text" id="username" name="username" value="" placeholder="Minecraft username" class="login username-field" />
+					<input type="text" id="username" name="username" value="" placeholder="Minecraft username" class="login username-field" required />
 				</div>
 				
 				<div class="field">
 					<label for="password">Password:</label>
-					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field"/>
+					<input type="password" id="password" name="password" value="" placeholder="Password" class="login password-field" required />
 				</div> 
 				
 			</div>
@@ -44,8 +44,9 @@
 <div class="footer">
   <div class="footer-inner">
     <div class="container">
-      <div class="row">
-        <div class="span12">&copy; 2015 by Sekiphp, Sognus, DvnBthlo</div>
+      <div>
+        <div class="span6">&copy; 2015 by Sekiphp, Sognus, DvnBthlo</div>
+				<div class="span6 to_right"><a href='http://github.com/Sekiphp/MineAuction'>MineAuction GitHub <span class='icon-github'></span></a></div>
       </div>
       <!-- /row -->
     </div>

@@ -13,13 +13,11 @@ class Menu{
   /**
    * Load all menu items from database
    */     
-  public function loadMenuItems($userAdmin, $userLang){
+  public function loadMenuItems($userAdmin){
 		$menu = array();
-		$userLang = "cz";
-		$userAdmin = 0;
 		
 		# $where is not possible to bind PDO
-		$where = ($userAdmin != 0) ? " WHERE m.is_private = '0' AND " : "";
+		$where = ($userAdmin != 1) ? " m.is_private = '0' AND " : "";
 		$sql = "
 			SELECT * 
 			FROM " . TABLE_MENU . " AS m 
@@ -29,7 +27,7 @@ class Menu{
 			ORDER BY m.idm
 		";
 		$bind = array(
-			":lang" => $userLang, 
+			":lang" => $_SESSION['playerLang'], 
 		);
 		
     $res = DB::query($sql, $bind);
@@ -47,6 +45,6 @@ class Menu{
    * Get the custom name of selected section
    */     
   public function getActiveName(){
-    return $this->active;
+    return $this -> active;
   }
 }

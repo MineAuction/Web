@@ -39,14 +39,34 @@ class __TwigTemplate_71a91502ffc720962aa2c92d9b018cd815c492aa7c873a521c23997b053
         // line 8
         echo "
     
-  <h1>Tvůj inventář</h1>
+  <h1>";
+        // line 10
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "inventory_h1", array()), "html", null, true);
+        echo "</h1>
   <table class=\"table table-bordered\" id='table_inventory' class=\"tablesorter\">
     <thead>
       <tr>
-\t\t\t\t<th>Předmět</th>
-\t\t\t\t<th>Máš kusů</th>
-\t\t\t\t<th>Max. cena</th>
-\t\t\t\t<th style='width: 350px;'>Prodat</th>
+\t\t\t\t<th>";
+        // line 14
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "item", array()), "html", null, true);
+        echo "</th>
+\t\t\t\t<th>";
+        // line 15
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "have_pc", array()), "html", null, true);
+        echo "</th>
+\t\t\t\t<th>";
+        // line 16
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "max_price", array()), "html", null, true);
+        echo "</th>
+\t\t\t\t<th style='width: 350px;'>";
+        // line 17
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "available_actions", array()), "html", null, true);
+        echo "</th>
 \t\t\t</tr>
     </thead>
     <tbody>
@@ -90,19 +110,42 @@ class __TwigTemplate_71a91502ffc720962aa2c92d9b018cd815c492aa7c873a521c23997b053
 \t\t\t\t<td></td>
         <td class='to_right'>
           <span class=\"input-prepend input-append\">
-            <span class=\"add-on\">ks</span>
-            <input class=\"span2 input1 items_count\" type=\"text\" placeholder='Počet'>
+            <span class=\"add-on\">";
+            // line 33
+            if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "pieces", array()), "html", null, true);
+            echo "</span>
+            <input class=\"span2 input1 items_count\" type=\"text\" placeholder='";
+            // line 34
+            if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "qty", array()), "html", null, true);
+            echo "'>
           </span>                                         
           <span class=\"input-prepend input-append\">
-            <span class=\"add-on\">\$</span>
-            <input class=\"span2 input1 items_price\" id=\"appendedPrependedInput\" type=\"text\" placeholder='Cena/ks'>
+            <span class=\"add-on\">";
+            // line 37
+            if (isset($context["settings"])) { $_settings_ = $context["settings"]; } else { $_settings_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_settings_, "currency", array()), "html", null, true);
+            echo "</span>
+            <input class=\"span2 input1 items_price\" id=\"appendedPrependedInput\" type=\"text\" placeholder='";
+            // line 38
+            if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "price_pc", array()), "html", null, true);
+            echo "'>
           </span>
-          <button class='btn btn-primary sell'>Prodat</button>
+          <button class='btn btn-primary sell'>";
+            // line 40
+            if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "sell", array()), "html", null, true);
+            echo "</button>
           <button class='btn btn-success' ";
             // line 41
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "getauction", array()), "html", null, true);
-            echo ">Dražit</button>
+            echo ">";
+            if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "auction", array()), "html", null, true);
+            echo "</button>
         </td>
       </tr>
     ";
@@ -129,6 +172,6 @@ class __TwigTemplate_71a91502ffc720962aa2c92d9b018cd815c492aa7c873a521c23997b053
 
     public function getDebugInfo()
     {
-        return array (  114 => 45,  103 => 41,  87 => 29,  75 => 27,  70 => 26,  65 => 25,  61 => 23,  56 => 22,  40 => 8,  37 => 7,  32 => 4,  29 => 3,);
+        return array (  157 => 45,  143 => 41,  138 => 40,  132 => 38,  127 => 37,  120 => 34,  115 => 33,  107 => 29,  95 => 27,  90 => 26,  85 => 25,  81 => 23,  76 => 22,  67 => 17,  62 => 16,  57 => 15,  52 => 14,  44 => 10,  40 => 8,  37 => 7,  32 => 4,  29 => 3,);
     }
 }

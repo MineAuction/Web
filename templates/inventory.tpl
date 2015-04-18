@@ -7,14 +7,14 @@
 {% block content %}
 
     
-  <h1>Tvůj inventář</h1>
+  <h1>{{ lang.inventory_h1 }}</h1>
   <table class="table table-bordered" id='table_inventory' class="tablesorter">
     <thead>
       <tr>
-				<th>Předmět</th>
-				<th>Máš kusů</th>
-				<th>Max. cena</th>
-				<th style='width: 350px;'>Prodat</th>
+				<th>{{ lang.item }}</th>
+				<th>{{ lang.have_pc }}</th>
+				<th>{{ lang.max_price }}</th>
+				<th style='width: 350px;'>{{ lang.available_actions }}</th>
 			</tr>
     </thead>
     <tbody>
@@ -22,23 +22,23 @@
     {% for item in inv %}
       <tr>
         <td>
-          <input type='hidden' class='item_id' value='{{item.itemId}}'>
-          <input type='hidden' class='item_subid' value='{{item.itemDamage}}'>
-          <img src='../ikony/{{item.img}}' alt='{{item.name}}' class="img1">{{ item.name }}
+          <input type='hidden' class='item_id' value='{{ item.itemId }}'>
+          <input type='hidden' class='item_subid' value='{{ item.itemDamage }}'>
+          <img src='../ikony/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }}
         </td>
         <td class='click_max items_qty'>{{ item.qty }}</td>
 				<td></td>
         <td class='to_right'>
           <span class="input-prepend input-append">
-            <span class="add-on">ks</span>
-            <input class="span2 input1 items_count" type="text" placeholder='Počet'>
+            <span class="add-on">{{ lang.pieces }}</span>
+            <input class="span2 input1 items_count" type="text" placeholder='{{ lang.qty }}'>
           </span>                                         
           <span class="input-prepend input-append">
-            <span class="add-on">$</span>
-            <input class="span2 input1 items_price" id="appendedPrependedInput" type="text" placeholder='Cena/ks'>
+            <span class="add-on">{{ settings.currency }}</span>
+            <input class="span2 input1 items_price" id="appendedPrependedInput" type="text" placeholder='{{ lang.price_pc }}'>
           </span>
-          <button class='btn btn-primary sell'>Prodat</button>
-          <button class='btn btn-success' {{ item.getauction }}>Dražit</button>
+          <button class='btn btn-primary sell'>{{ lang.sell }}</button>
+          <button class='btn btn-success' {{ item.getauction }}>{{ lang.auction }}</button>
         </td>
       </tr>
     {% endfor %}

@@ -1,12 +1,35 @@
 <?php
 	// example with variables: "bad_price" => "zadal jste: {a:1}, ale je povoleno max {a:2}"
   $dictionary = array(
+		# login page
     "login_h1" => "Přihlásit se", 
     "login_h2" => "Prosím vyplňte své přihlašovací údaje", 
     "login_butt" => "Přihlásit", 
+		"pass" => "Heslo", 
+		"m_username" => "Minecraft login", 
+		
     "bad_qty" => "Špatné množství", 
     "bad_price" => "Cena je mimo rozsah", 
     "sell_ok" => "Prodej je ok",
-		"qty" => "počet", 
-		"item" => "předmět",
+		"qty" => "Počet", 
+		"item" => "Předmět",
+		"settings" => "Nastavení", 
+		"logout" => "Odhlásit se",
+		
+		# settings page
+		"settings_h1" => "Nastavení", 
+		"default_lang" => "Vyber jazyk", 
+		"set" => "Nastavit", 
+
+		# inventory
+		"inventory_h1" => "Tvůj inventář", 
+		"have_pc" => "Máš kusů", 
+		"max_price" => "Max. cena", 
+		"sell" => "Prodat", 
+		"price_pc" => "Cena/ks", 
+		"pieces" => "ks", 
+		"available_actions" => "Dostupné akce", 
+		"auction" => "Dražit", 
+		
+		"" => "", 
   );

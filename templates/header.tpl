@@ -8,7 +8,7 @@
           <span class="icon-bar"></span><span class="icon-bar"></span>  
           <span class="icon-bar"></span>
         </a>
-        <a class="brand" href="?page=inventory">
+        <a class="brand" href="index.php">
           <img src='/images/dia_small.png' alt='Diamond'>
           <span>{{ settings.pageTitle }}</span>   
         </a>   
@@ -21,8 +21,8 @@
               </li>
               <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {{ session.playerName }}<b class="caret"></b></a>
                 <ul class="dropdown-menu">  
-                  <li><a href="index.php?page=settings">Setttings</a></li>  
-                  <li><a href="index.php?page=logout">Logout</a></li>  
+                  <li><a href="?page=settings">Settings</a></li>  
+                  <li><a href="?page=logout">Logout</a></li>  
                 </ul>   
               </li> 
             {% elseif pageURL != "faq" %}

@@ -7,7 +7,8 @@
 	define("TABLE_MENU_LANG", "ma_menu_locale");
   define("TABLE_OFFERS", "ma_offers");
   define("TABLE_LOGS", "ma_logs");
-  
+	define("TABLE_LANGS", "ma_languages"); 
+	
 
   # settings - $GLOBALS - global visibility in project
 	# please don't change this array
@@ -15,7 +16,7 @@
 	$settings['currency'] = "£"; # £, $, €
 	$settings['maxPrice'] = "140"; // 140 = 140%
   $settings['pageTitle'] = "MineAuction";
-	$settings['default_lang'] = "en";
+	$settings['default_lang'] = "en"; // only langs from php/lib/lang
   $GLOBALS['settings'] = $settings;
 	
 	

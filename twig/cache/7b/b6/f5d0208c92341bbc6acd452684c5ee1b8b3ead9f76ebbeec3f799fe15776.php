@@ -21,14 +21,14 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
   <head>
     ";
         // line 4
-        $this->env->loadTemplate("login.tpl", "673605523")->display($context);
+        $this->env->loadTemplate("login.tpl", "1610518685")->display($context);
         echo " 
     <link href=\"/bootstrap/css/pages/signin.css\" rel=\"stylesheet\" type=\"text/css\">
   </head>
 <body>
 \t";
         // line 8
-        $this->env->loadTemplate("login.tpl", "195167298")->display($context);
+        $this->env->loadTemplate("login.tpl", "1830521273")->display($context);
         echo " 
 
 \t";
@@ -66,12 +66,12 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 \t\t\t\t\t
 \t\t\t\t<div class=\"field\">
 \t\t\t\t\t<label for=\"username\">Username</label>
-\t\t\t\t\t<input type=\"text\" id=\"username\" name=\"username\" value=\"\" placeholder=\"Minecraft username\" class=\"login username-field\" />
+\t\t\t\t\t<input type=\"text\" id=\"username\" name=\"username\" value=\"\" placeholder=\"Minecraft username\" class=\"login username-field\" required />
 \t\t\t\t</div>
 \t\t\t\t
 \t\t\t\t<div class=\"field\">
 \t\t\t\t\t<label for=\"password\">Password:</label>
-\t\t\t\t\t<input type=\"password\" id=\"password\" name=\"password\" value=\"\" placeholder=\"Password\" class=\"login password-field\"/>
+\t\t\t\t\t<input type=\"password\" id=\"password\" name=\"password\" value=\"\" placeholder=\"Password\" class=\"login password-field\" required />
 \t\t\t\t</div> 
 \t\t\t\t
 \t\t\t</div>
@@ -91,8 +91,9 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 <div class=\"footer\">
   <div class=\"footer-inner\">
     <div class=\"container\">
-      <div class=\"row\">
-        <div class=\"span12\">&copy; 2015 by Sekiphp, Sognus, DvnBthlo</div>
+      <div>
+        <div class=\"span6\">&copy; 2015 by Sekiphp, Sognus, DvnBthlo</div>
+\t\t\t\t<div class=\"span6 to_right\"><a href='http://github.com/Sekiphp/MineAuction'>MineAuction GitHub <span class='icon-github'></span></a></div>
       </div>
       <!-- /row -->
     </div>
@@ -130,7 +131,7 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 
 
 /* login.tpl */
-class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_673605523 extends Twig_Template
+class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_1610518685 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -170,7 +171,7 @@ class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe
 
 
 /* login.tpl */
-class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_195167298 extends Twig_Template
+class __TwigTemplate_7bb6f5d0208c92341bbc6acd452684c5ee1b8b3ead9f76ebbeec3f799fe15776_1830521273 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {

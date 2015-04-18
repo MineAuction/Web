@@ -6,22 +6,13 @@
  */ 
 class Locale{
 	/** Lang to translate */
-  public $lang = "en";
+  public $lang;
 	/** Path to lang packages */
-  private $path = "";
+  private $path = "lang/";
 	/** Default language package */
-	private $defaltLang = "cz";
+	private $defaltLang;
 	/** Array with translations in selected language */
 	private $dictionary;
-  
-	/**
-	 * Inicialize Locale API
-	 * 
-	 * @param String Path to lang packages
-	 */
-  public function __construct($path){
-		$this -> path = $path;
-  }
   
 	/**
 	 * Set the language to logged player
@@ -32,34 +23,26 @@ class Locale{
   }
 	
 	/**
+	 * Set default language
+	 */
+	public function setDefaultLang($lang){
+		$this -> defaultLang = $lang;
+	}
+	
+	/**
 	 * Check if language file exist and require selected lang
 	 */
 	private function existLang(){
 		$fileName = $this->path . 'lang_' . $this->lang . '.php';
 
-		if(file_exists(__DIR__."/".$fileName)){
+		if(file_exists(__DIR__ . "/" . $fileName)){
 			require_once $fileName;
 		}
 		else{
 			$this->lang = $this->defaultLang;
-			require_once $this->path . 'lang_' . $this->defaltLang . '.php';
+			require_once $this->path . 'lang_' . $this->lang . '.php';
 		}
 		$this->dictionary = $dictionary;		
-	}
-	
-	private function replaceArguments($translation){
-    // Replace arguments
-    if (false !== strpos($translation, '{a:')) {
-			$replace = array();
-			$args = func_get_args();
-			for ($i = 1, $max = count($args); $i < $max; $i ++) {
-				$replace['{a:' . $i . '}'] = $args[$i];
-			}
-			// interpolate replacement values into the messsage then return
-			return strtr($translation, $replace);
-    }			
-			
-		return translation;
 	}
 	
   /**
@@ -69,7 +52,7 @@ class Locale{
 		$translation = $this -> dictionary[$key];			
 			
 		// Replace arguments
-    if (false !== strpos($translation, '{a:')) {
+    if (false !== strPos($translation, '{a:')) {
 			$replace = array();
 			$args = func_get_args();
 			for ($i = 1, $max = count($args); $i < $max; $i ++) {
@@ -89,10 +72,12 @@ class Locale{
     return $this->dictionary;
   }
 	
+	/*
 	public static function getAvailableLangs(){
 		$scan = scandir("php/lib/lang/", 1);	
 		print_r($scan);
 	}
+	*/
 
 }
 ?>

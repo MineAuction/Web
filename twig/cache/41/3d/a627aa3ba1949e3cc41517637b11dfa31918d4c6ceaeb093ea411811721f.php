@@ -32,7 +32,7 @@ class __TwigTemplate_413da627aa3ba1949e3cc41517637b11dfa31918d4c6ceaeb093ea41181
           <span class=\"icon-bar\"></span><span class=\"icon-bar\"></span>  
           <span class=\"icon-bar\"></span>
         </a>
-        <a class=\"brand\" href=\"?page=inventory\">
+        <a class=\"brand\" href=\"index.php\">
           <img src='/images/dia_small.png' alt='Diamond'>
           <span>";
         // line 13
@@ -65,8 +65,8 @@ class __TwigTemplate_413da627aa3ba1949e3cc41517637b11dfa31918d4c6ceaeb093ea41181
             echo twig_escape_filter($this->env, $this->getAttribute($_session_, "playerName", array()), "html", null, true);
             echo "<b class=\"caret\"></b></a>
                 <ul class=\"dropdown-menu\">  
-                  <li><a href=\"index.php?page=settings\">Setttings</a></li>  
-                  <li><a href=\"index.php?page=logout\">Logout</a></li>  
+                  <li><a href=\"?page=settings\">Settings</a></li>  
+                  <li><a href=\"?page=logout\">Logout</a></li>  
                 </ul>   
               </li> 
             ";
