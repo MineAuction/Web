@@ -5,8 +5,6 @@
 {% endblock %}
 
 {% block content %}
-
-    
   <h1>{{ lang.inventory_h1 }}</h1>
   <table class="table table-bordered" id='table_inventory' class="tablesorter">
     <thead>

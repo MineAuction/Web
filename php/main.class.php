@@ -21,12 +21,9 @@ class Main{
 	 * Main application method
 	 * !!! No edit !!!
 	 */
-  public function __construct(){
+  public function __construct($locale){
     $this -> get = @$_GET['page'];   
-		
-		# language
-		$this -> locale = new Locale();
-		$this -> locale -> setDefaultLang($GLOBALS['settings']['default_lang']);
+		$this -> locale = $locale;
 		
 		# others
 		$this -> setBasicRenderParams();
@@ -47,13 +44,11 @@ class Main{
 	 * Specify access
 	 */
 	private function selectPage(){
-		if(!isSet($_SESSION['playerID'])){
-			$this -> locale -> setLocale($GLOBALS['settings']['default_lang']);			
+		if(!isSet($_SESSION['playerID'])){		
 			$main = new MainOuter($this -> get, $this -> locale);
 		}
 		else{			
 			$main = new MainInner($this -> get, $this -> locale);				
-			$this -> locale -> setLocale($_SESSION['playerLang']);
 		}
 		
 		# get data from sub class

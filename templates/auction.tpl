@@ -1,6 +1,6 @@
 {% extends "index.tpl" %}
 
 {% block content %}
-	auction
+	<h1>{{ lang.auction_h1 }}</h1>
 
 {% endblock %}

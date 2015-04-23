@@ -1,4 +1,1 @@
-{% extends "index.tpl" %}
-
-{% block content %} demand
-{% endblock %}
+{% extends "index.tpl" %}{% block content %}	<h1>{{ lang.demand_h1 }}</h1>{% endblock %}

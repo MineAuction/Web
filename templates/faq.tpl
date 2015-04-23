@@ -26,23 +26,24 @@
 								
 							<ol class="faq-list">							
 								<li>
-									<h4>Kam jsem se to dostal? :O</h4>
-									<p>Stránka, na které právě nyní čteš tuto nápovědu je webový obchod, který je napojený na Minecraft server. Prostřednictvím této služby mohou mezi sebou obchodovat 
+									<h4>Kam jsem se to dostal?</h4>
+									<p>Toto je webový obchod pro Minecraft server na němž můžeš kupovat a prodát itemy, jenž získáte v hře a zvyšovat tak stav vašeho herního peněžního účtu. </p>
+                  <!--Stránka, na které právě nyní čteš tuto nápovědu je webový obchod, který je napojený na Minecraft server. Prostřednictvím této služby mohou mezi sebou obchodovat 
 									i hráči, kteří jsou od sebe vzdáleni tisíce kilometrů ve velkém herním světě. Jednoduše na jedné straně vložíte předměty, prodáte a osoba, jenž je koupila si je vezme z 
-									aukčního bodu poblíž místa svého bydliště. Je to opravdu jednoduché!</p>										
+									aukčního bodu poblíž místa svého bydliště. Je to opravdu jednoduché!-->										
 								</li>
 								
 								<li>								
 									<h4>Jak si vytvořit účet do MineAuction?</h4>
-									<p>Heslo pro přihlašování k webovému rozhraní pluginu MineAuction můžeš získat ve hře. Stačí jenom napsat do chatu příkaz ve tvaru: <strong>/ma pass tvojeheslo</strong>, kde řetězec tvojeheslo nahradíš svým heslem.</p>										
+									<p>Účet vytvoříte příkazem přímo ve hře a to jednoduchým príkazem <strong>/ma pass tvojeheslo</strong>, kde nahradíš <strong>tvojeheslo</strong> svým heslem, které budeš používat pro příhlášení do aukce.. Přihlašovací jméno bude poté tvůj stávající nick ve hře.</p>										
 								</li>
-
+                <!-- /Heslo pro přihlašování k webovému rozhraní pluginu MineAuction můžeš získat ve hře. Stačí jenom napsat do chatu příkaz ve tvaru: <strong>/ma pass tvojeheslo</strong>, kde řetězec tvojeheslo nahradíš svým heslem.-->
 								<li>								
 									<h4>Jak tento plugin funguje?</h4>
-									<p>Tento plugin sestává ze dvou částí. První částí je in-game, která běží na herním serveru společně s hrou Minecraft. Pomocí této části můžeš přistupovat k virtuálnímu inventáři, kam si můžeš vkládat předměty nebo je 
-									posléze i vybírat. Druhou částí je webový klient (tato stránka), který umožňuje manipulaci s předměty, které máš ve svém virtuálním inventáři. Předměty můžeš prodávat nebo, pokud jsou dostatečně cenné nabízet v aukci. </p>										
+									<p>Tento plugin je tvořen webovým rozhraním a minecraft pluginem. Webová část slouží ke kupování a prodávání itemů, jenž ve hře vložíš do tvého aukčního inventáře.  </p>										
 								</li>		
-
+                <!-- /Tento plugin sestává ze dvou částí. První částí je in-game, která běží na herním serveru společně s hrou Minecraft. Pomocí této části můžeš přistupovat k virtuálnímu inventáři, kam si můžeš vkládat předměty nebo je 
+									posléze i vybírat. Druhou částí je webový klient (tato stránka), který umožňuje manipulaci s předměty, které máš ve svém virtuálním inventáři. Předměty můžeš prodávat nebo, pokud jsou dostatečně cenné nabízet v aukci. -->
 								<li>								
 									<h4>Co je to aukční bod a jak jej vytvořím?</h4>
 									<p></p>										

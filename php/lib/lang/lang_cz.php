@@ -31,5 +31,25 @@
 		"available_actions" => "Dostupné akce", 
 		"auction" => "Dražit", 
 		
-		"" => "", 
+		# demand
+		"demand_h1" => "Poptávky", 
+		
+		# auction
+		"auction_h1" => "Aukce", 
+		
+		# items
+		"items_h1" => "Dostupné předměty", 
+		"offers_count" => "Počet nabídek", 
+		
+		# offer
+		"offers_h1" => "Nabídky", 
+		
+		# stat
+		"stats_h1" => "Žebříčky", 
+		
+		# admin
+		"admin_h1" => "Administrace",
+
+		"" => "",
+		"" => "",	
   );

@@ -14,6 +14,6 @@
 	$loader = new Twig_Loader_Filesystem('templates');
 	$twig = new Twig_Environment($loader, $options); 
   
-  $main = new Main();
+  $main = new Main($locale);
 	$template = $twig->loadTemplate($main->tpl);
 	echo $template->render($main->render); 

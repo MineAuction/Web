@@ -20,3 +20,8 @@
 	DB::connect($db_ma);
 	DB2::connect($db_economy);
 	
+	# language
+	$locale = new Locale();
+	$locale -> setDefaultLang($GLOBALS['settings']['default_lang']);	
+	$locale -> setLocale($_SESSION['playerLang']);
+	//print_r($locale->getTable());

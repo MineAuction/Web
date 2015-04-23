@@ -1,8 +1,15 @@
+/**
+ * JS for templates/inventory.tpl
+ */
 $(document).ready(function(){
-  /* Set max value to input */
+  
+	/* Set max value to input */
   $('.click_max').click(function(){
-    $(this).closest('td').next('td').find('.items_count').val($(this).html());
-    $(this).closest('td').next('td').find('.items_price').focus();
+		var value = $(this).html();
+		var td = $(this).closest('td').next('td').next('td');
+		
+		td.find('.items_count').val(value);
+    td.find('.items_price').focus();
   });
 
   /* SELL ITEM VIA AJAX */

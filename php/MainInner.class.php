@@ -70,8 +70,8 @@ class MainInner implements IMain{
   private function section_offer(){
 		$this-> tpl = "offer";
 			
-    $this -> render['offers'] = Offers::offer();  
-		$this -> render['myoffers'] = Offers::myoffer();  
+    $this -> render['offers'] = Offers::getOffers("all", $_SESSION['playerID']);  
+		$this -> render['myoffers'] = Offers::getOffers("my", $_SESSION['playerID']);  
   }
 	
   private function section_settings(){

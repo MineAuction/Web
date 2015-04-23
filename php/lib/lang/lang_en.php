@@ -29,5 +29,27 @@
 		"price_pc" => "Price/pc", 
 		"pieces" => "pc", 
 		"available_actions" => "Available actions", 
-		"auction" => "Auction", 		
+		"auction" => "Auction", 	
+
+		# demand
+		"demand_h1" => "Demand", 
+
+		# auction
+		"auction_h1" => "Auctions", 
+
+		# items
+		"items_h1" => "Available items",
+		"offers_count" => "Offers count", 		
+
+		# offer
+		"offers_h1" => "Offers", 
+
+		# stat
+		"stats_h1" => "Stats", 
+
+		# admin
+		"admin_h1" => "Admin",
+
+		"" => "",
+		"" => "",	 		
   );

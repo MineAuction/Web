@@ -1,5 +1,1 @@
-{% extends "index.tpl" %}
-
-{% block content %}
-  stat :) :)
-{% endblock %}
+{% extends "index.tpl" %}{% block content %}	<h1>{{ lang.stats_h1 }}</h1>{% endblock %}

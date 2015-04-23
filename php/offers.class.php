@@ -1,39 +1,35 @@
 <?php
-class Offers{
-  public static function offer(){
-		$where = array(":playerID" => /* $_SESSION['playerID'] */ 12);
-		
-		// TODO: databazovy view nefunguje z neznamych pricin
+class Offers{	
+	/**
+	 * Get array contains offers list
+	 * 
+	 * @param String $type - all || myOffer
+	 * $param int $playerID
+	 */ 
+	public static function getOffers($type, $playerID){
+		// basic SQL
 		$sql = "
 			SELECT ip.id AS offerId, p.playerName, p.id AS playerID, il.name, il.img, ip.qty, ip.price, ip.qty*ip.price AS priceAll, ip.itemId, ip.itemDamage    
 			FROM " . TABLE_ITEMS_LIST . " AS il 
-			INNER JOIN ma_offers AS ip 
-			INNER JOIN ma_players AS p 
-			ON ip.itemID = il.itemID AND ip.itemDamage = il.itemSubID AND p.id = ip.playerID 
-			WHERE playerID != :playerID
+			INNER JOIN " . TABLE_OFFERS . " AS ip 
+			INNER JOIN " . TABLE_PLAYERS . " AS p 
+			ON 
+			ip.itemID = il.itemID AND 
+			ip.itemDamage = il.itemSubID AND 
+			p.id = ip.playerID 
     ";
 		
-		$items = DB::assocAll(DB::query($sql, $where));
-		//print_r($items);
-    return $items;
-  }
-  public static function myOffer(){
-		$where = array(":playerID" =>  $_SESSION['playerID']);
-		                                                            
-		// TODO: databazovy view nefunguje z neznamych pricin
-		$sql = "
-			SELECT ip.id AS offerId, p.playerName, p.id AS playerID, il.name, il.img, ip.qty, ip.price, ip.qty*ip.price AS priceAll, ip.itemId, ip.itemDamage    
-			FROM " . TABLE_ITEMS_LIST . " AS il 
-			INNER JOIN ma_offers AS ip 
-			INNER JOIN ma_players AS p 
-			ON ip.itemID = il.itemID AND ip.itemDamage = il.itemSubID AND p.id = ip.playerID 
-			WHERE playerID = :playerID
-    ";
+		if($type != "all"){
+			$sql .= "WHERE playerID = :playerID";	
+		}	
+		else{
+			$sql .= "WHERE playerID != :playerID";		
+		}		
+		$where = array(":playerID" => $playerID);
 		
-		$items = DB::assocAll(DB::query($sql, $where));
-		//print_r($items);
-    return $items;
-  }
+		return DB::assocAll(DB::query($sql, $where));
+	}
+	
   
   // Insert offer into ma_offers and update mount items or delete items from ma_items
   public static function offerIn($itemID, $itemDamage, $qty, $price){

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: wm48.wedos.net:3306
--- Vygenerováno: Sob 18. dub 2015, 09:43
+-- Vygenerováno: Čtv 23. dub 2015, 23:59
 -- Verze serveru: 5.6.14
 -- Verze PHP: 5.4.23
 
@@ -48,7 +48,7 @@ INSERT INTO `ma_items` (`id`, `playerID`, `itemID`, `itemDamage`, `qty`, `itemMe
 (3, 6, '38', 7, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (4, 6, '97', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (6, 1, '1', 2, 4, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(8, 7, '348', 0, 112, '{"meta-type":"UNSPECIFIC"}', '{}', 'kunda'),
+(8, 7, '348', 0, 112, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (9, 6, '16', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (10, 6, '35', 6, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (11, 6, '20', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
@@ -902,7 +902,7 @@ CREATE TABLE IF NOT EXISTS `ma_logs` (
   `text` text CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=287 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=303 ;
 
 --
 -- Vypisuji data pro tabulku `ma_logs`
@@ -1186,7 +1186,23 @@ INSERT INTO `ma_logs` (`id`, `component`, `level`, `text`, `time`) VALUES
 (283, 'Login', 'info', 'User Monetic was successfully logged.', '2015-04-18 05:21:41'),
 (284, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 07:18:11'),
 (285, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 07:20:42'),
-(286, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 07:21:53');
+(286, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 07:21:53'),
+(287, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 09:33:37'),
+(288, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 10:41:13'),
+(289, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 10:42:53'),
+(290, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-18 10:43:35'),
+(291, 'Login', 'info', 'User Monetic was successfully logged.', '2015-04-18 11:51:40'),
+(292, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-19 08:42:16'),
+(293, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-19 09:14:17'),
+(294, 'Login', 'info', 'User sekiphp was successfully logged.', '2015-04-19 09:14:38'),
+(295, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-20 12:47:19'),
+(296, 'Login', 'info', 'User Monetic was successfully logged.', '2015-04-20 14:36:09'),
+(297, 'Login', 'info', 'User LynSis was successfully logged.', '2015-04-20 16:29:45'),
+(298, 'Login', 'info', 'User Monetic was successfully logged.', '2015-04-22 20:22:50'),
+(299, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-22 21:33:35'),
+(300, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-22 21:33:38'),
+(301, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-22 21:35:07'),
+(302, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-23 21:35:03');
 
 -- --------------------------------------------------------
 
@@ -1336,9 +1352,8 @@ CREATE TABLE IF NOT EXISTS `ma_players` (
 
 INSERT INTO `ma_players` (`id`, `playerName`, `uuid`, `locked`, `password`, `admin`, `lang`) VALUES
 (1, 'Sognus', '07256eba-f044-4d0f-ba0f-da99524376a4', 0, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '0', 'en'),
-(6, 'LynSis', '7d771840-f713-4b26-ad23-141f68ea575f', 0, 'dc63d6ec195bce05be6ad090acefe89e028e40e4', '1', 'en'),
+(6, 'LynSis', '7d771840-f713-4b26-ad23-141f68ea575f', 0, 'dc63d6ec195bce05be6ad090acefe89e028e40e4', '1', 'cz'),
 (7, 'Sekiphp', 'abfce32e-8817-41a6-a1cd-fe8ada2dea12', 0, 'edb433bdd7c13851c7c68cb31a5acf33a80cd2cc', '1', 'en'),
-(8, 'dwi', '57798a5e-5bde-4664-8abe-dd7687694b45', 0, '6a032f5aa3c90284feb5007b09670555a0289613', '0', 'en'),
 (9, 'Monetic', '5edb832b-dcf3-476c-b9da-f0fd999c4af7', 0, '7c4a8d09ca3762af61e59520943dc26494f8941b', '1', 'en');
 
 -- --------------------------------------------------------
