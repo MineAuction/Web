@@ -30,21 +30,29 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
     {
         // line 4
         echo "\t<script src=\"/js/findItem.jquery.js\"></script>
+\t<script src=\"/js/offers.js\"></script>
+\t<script>
+\t//window.location.replace(\"ofre\");
+\t</script>
 ";
     }
 
-    // line 7
+    // line 11
     public function block_content($context, array $blocks = array())
     {
         echo "\t\t
 
-\t<h1>Nabídky</h1>
+\t<h1><h1>";
+        // line 13
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "offers_h1", array()), "html", null, true);
+        echo "</h1></h1>
 
 \t<div class=\"tabbable\">
 \t\t<ul class=\"nav nav-tabs\">
-      <li class=\"active\"><a href=\"#offer_buy\" data-toggle=\"tab\">Koupit</a></li>
-\t\t\t<li><a href=\"#offer_your\" data-toggle=\"tab\">Tvoje</a></li>
-\t\t\t<li><a href=\"#offer_all\" data-toggle=\"tab\">Všechny</a></li>
+      <li class=\"active\"><a href=\"#offer_buy\" data-toggle=\"tab\" class='tab'>Koupit</a></li>
+\t\t\t<li><a href=\"#offer_your\" data-toggle=\"tab\" class='tab'>Tvoje</a></li>
+\t\t\t<li><a href=\"#offer_all\" data-toggle=\"tab\" class='tab'>Všechny</a></li>
 \t\t</ul>
 
 \t\t<div class=\"tab-content\">
@@ -62,24 +70,26 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
 \t\t\t\t\t</thead>
 \t\t\t\t\t<tbody>
 \t\t\t\t\t\t";
-        // line 32
+        // line 36
         if (isset($context["myoffers"])) { $_myoffers_ = $context["myoffers"]; } else { $_myoffers_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($_myoffers_);
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
-            // line 33
-            echo "\t\t\t\t\t\t<tr><td   ><img  class=\"img1\" src='http://achievecraft.com/tools/avatar/32/";
+            // line 37
+            echo "\t\t\t\t\t\t<tr>
+              <td><img class=\"img1\" src='https://minotar.net/avatar/";
+            // line 38
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "playerName", array()), "html", null, true);
-            echo ".png' alt='";
+            echo "/32' alt='";
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "playerName", array()), "html", null, true);
             echo "'>";
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "playerName", array()), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t<td><img class=\"img1\" src='../ikony/";
-            // line 34
+\t\t\t\t\t\t\t<td><img class=\"img1\" src='../items_icons/";
+            // line 39
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "img", array()), "html", null, true);
             echo "' alt='";
@@ -90,39 +100,33 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "name", array()), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t<td>";
-            // line 35
+            // line 40
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "qty", array()), "html", null, true);
             echo "</td>
 \t\t\t\t\t\t\t<td>";
-            // line 36
+            // line 41
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "price", array()), "html", null, true);
             echo " </td>
 \t\t\t\t\t\t\t<td>";
-            // line 37
+            // line 42
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "priceAll", array()), "html", null, true);
             echo " </td>
-\t\t\t\t\t\t\t<td class='to_right'>
-\t\t\t\t\t\t\t\t<span class=\"input-prepend input-append\">
-\t\t\t\t\t\t\t\t\t<span class=\"add-on\">ks</span>
-\t\t\t\t\t\t\t\t\t<input class=\"span2 input1\" id=\"appendedPrependedInput\" type=\"text\" placeholder='Počet'>
-\t\t\t\t\t\t\t\t</span>
-\t\t\t\t\t\t\t\t<button class='btn btn-primary'>Koupit</button>
-\t\t\t\t\t\t\t</td>
+\t\t\t\t\t\t\t<td class='to_right'><button class='btn btn-primary'>Zrušit</button></td>
 \t\t\t\t\t\t</tr>
 \t\t\t\t\t\t";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 46
         echo "\t\t\t\t\t</tbody>
 \t\t\t\t</table>
 \t\t\t</div>
 \t\t\t<div class=\"tab-pane\" id=\"offer_all\" >
-\t\t\t\t<table class=\"table table-bordered\"  id=\"offertable\"  class=\"tablesorter\" > 
+\t\t\t\t<table class=\"table table-bordered\" id=\"offertable\" class=\"tablesorter\"> 
 \t\t\t\t\t<thead>
 \t\t\t\t\t\t<tr>
 \t\t\t\t\t\t\t<th>Prodejce</th>
@@ -135,23 +139,25 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
 \t\t\t\t\t</thead>
 \t\t\t\t\t<tbody>
 \t\t\t\t\t\t";
-        // line 63
+        // line 62
         if (isset($context["offers"])) { $_offers_ = $context["offers"]; } else { $_offers_ = null; }
         $context['_parent'] = (array) $context;
         $context['_seq'] = twig_ensure_traversable($_offers_);
         foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+            // line 63
+            echo "\t\t\t\t\t\t<tr>
+              <td><img class=\"img1\" src='https://minotar.net/avatar/";
             // line 64
-            echo "\t\t\t\t\t\t<tr><td   ><img  class=\"img1\" src='http://achievecraft.com/tools/avatar/32/";
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "playerName", array()), "html", null, true);
-            echo ".png' alt='";
+            echo "/32' alt='";
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "playerName", array()), "html", null, true);
             echo "'>";
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "playerName", array()), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t<td><img class=\"img1\" src='../ikony/";
+\t\t\t\t\t\t\t<td><img class=\"img1\" src='../items_icons/";
             // line 65
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "img", array()), "html", null, true);
@@ -162,7 +168,7 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "name", array()), "html", null, true);
             echo "</td>
-\t\t\t\t\t\t\t<td>";
+\t\t\t\t\t\t\t<td class='click_max'>";
             // line 66
             if (isset($context["item"])) { $_item_ = $context["item"]; } else { $_item_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_item_, "qty", array()), "html", null, true);
@@ -179,8 +185,12 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
             echo " </td>
 \t\t\t\t\t\t\t<td class='to_right'>
 \t\t\t\t\t\t\t\t<span class=\"input-prepend input-append\">
-\t\t\t\t\t\t\t\t\t<span class=\"add-on\">ks</span>
-\t\t\t\t\t\t\t\t\t<input class=\"span2 input1\" id=\"appendedPrependedInput\" type=\"text\" placeholder='Počet'>
+\t\t\t\t\t\t\t\t\t<span class=\"add-on\">";
+            // line 71
+            if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "pieces", array()), "html", null, true);
+            echo "</span>
+\t\t\t\t\t\t\t\t\t<input class=\"span2 input1 items_count\" id=\"appendedPrependedInput\" type=\"text\" placeholder='Počet' required>
 \t\t\t\t\t\t\t\t</span>
 \t\t\t\t\t\t\t\t<button class='btn btn-primary'>Koupit</button>
 \t\t\t\t\t\t\t</td>
@@ -194,7 +204,7 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
         echo "\t\t\t\t\t</tbody>
 \t\t\t\t</table>
 \t\t\t</div>
-\t\t\t<div class=\"tab-pane active\" id=\"offer_buy\">
+\t<div class=\"tab-pane active\" id=\"offer_buy\">
         <div class=\"span6\">
           <div class=\"widget\">
             <div class=\"widget-header\"> <i class=\"icon-bookmark\"></i>
@@ -258,6 +268,6 @@ class __TwigTemplate_a5756974ce18974ed632b10b5f05b6c60d7cab7c4f647433b2cc4d8e3e7
 
     public function getDebugInfo()
     {
-        return array (  194 => 78,  177 => 68,  172 => 67,  167 => 66,  156 => 65,  144 => 64,  139 => 63,  121 => 47,  104 => 37,  99 => 36,  94 => 35,  83 => 34,  71 => 33,  66 => 32,  37 => 7,  32 => 4,  29 => 3,);
+        return array (  204 => 78,  190 => 71,  183 => 68,  178 => 67,  173 => 66,  162 => 65,  151 => 64,  148 => 63,  143 => 62,  125 => 46,  114 => 42,  109 => 41,  104 => 40,  93 => 39,  82 => 38,  79 => 37,  74 => 36,  47 => 13,  41 => 11,  32 => 4,  29 => 3,);
     }
 }

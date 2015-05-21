@@ -7,7 +7,7 @@ $(document).ready(function(){
   $('.click_max').click(function(){
 		var value = $(this).html();
 		var td = $(this).closest('td').next('td').next('td').next('td');
-		alert(td.html());
+		//alert(td.html());
 		td.find('.items_count').val(value);
   });
 	

@@ -28,7 +28,10 @@ class __TwigTemplate_e72d785c423e5487e9bdae3fcf8b99aacd6f0b21d90769e0abd76665c1a
     public function block_content($context, array $blocks = array())
     {
         // line 4
-        echo "\tauction
+        echo "\t<h1>";
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "auction_h1", array()), "html", null, true);
+        echo "</h1>
 
 ";
     }

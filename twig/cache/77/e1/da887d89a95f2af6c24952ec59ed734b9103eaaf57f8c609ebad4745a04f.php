@@ -28,7 +28,10 @@ class __TwigTemplate_77e1da887d89a95f2af6c24952ec59ed734b9103eaaf57f8c609ebad474
     public function block_content($context, array $blocks = array())
     {
         // line 6
-        echo " demand
+        echo "\t<h1>";
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "demand_h1", array()), "html", null, true);
+        echo "</h1>
 
 ";
     }

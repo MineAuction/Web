@@ -21,7 +21,7 @@ class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4
   <head>
     ";
         // line 4
-        $this->env->loadTemplate("faq.tpl", "830138989")->display($context);
+        $this->env->loadTemplate("faq.tpl", "432226365")->display($context);
         echo " 
     <link href=\"/bootstrap/css/pages/faq.css\" rel=\"stylesheet\" type=\"text/css\">
   </head>
@@ -29,7 +29,7 @@ class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4
 
 \t";
         // line 9
-        $this->env->loadTemplate("faq.tpl", "1291818590")->display($context);
+        $this->env->loadTemplate("faq.tpl", "579734694")->display($context);
         echo "    
 
 <div class=\"main\">\t
@@ -50,23 +50,24 @@ class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t<ol class=\"faq-list\">\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<li>
-\t\t\t\t\t\t\t\t\t<h4>Kam jsem se to dostal? :O</h4>
-\t\t\t\t\t\t\t\t\t<p>Stránka, na které právě nyní čteš tuto nápovědu je webový obchod, který je napojený na Minecraft server. Prostřednictvím této služby mohou mezi sebou obchodovat 
+\t\t\t\t\t\t\t\t\t<h4>Kam jsem se to dostal?</h4>
+\t\t\t\t\t\t\t\t\t<p>Toto je webový obchod pro Minecraft server na němž můžeš kupovat a prodát itemy, jenž získáte v hře a zvyšovat tak stav vašeho herního peněžního účtu. </p>
+                  <!--Stránka, na které právě nyní čteš tuto nápovědu je webový obchod, který je napojený na Minecraft server. Prostřednictvím této služby mohou mezi sebou obchodovat 
 \t\t\t\t\t\t\t\t\ti hráči, kteří jsou od sebe vzdáleni tisíce kilometrů ve velkém herním světě. Jednoduše na jedné straně vložíte předměty, prodáte a osoba, jenž je koupila si je vezme z 
-\t\t\t\t\t\t\t\t\taukčního bodu poblíž místa svého bydliště. Je to opravdu jednoduché!</p>\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\taukčního bodu poblíž místa svého bydliště. Je to opravdu jednoduché!-->\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t</li>
 \t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t<li>\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<h4>Jak si vytvořit účet do MineAuction?</h4>
-\t\t\t\t\t\t\t\t\t<p>Heslo pro přihlašování k webovému rozhraní pluginu MineAuction můžeš získat ve hře. Stačí jenom napsat do chatu příkaz ve tvaru: <strong>/ma pass tvojeheslo</strong>, kde řetězec tvojeheslo nahradíš svým heslem.</p>\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t<p>Účet vytvoříte příkazem přímo ve hře a to jednoduchým príkazem <strong>/ma pass tvojeheslo</strong>, kde nahradíš <strong>tvojeheslo</strong> svým heslem, které budeš používat pro příhlášení do aukce.. Přihlašovací jméno bude poté tvůj stávající nick ve hře.</p>\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t</li>
-
+                <!-- /Heslo pro přihlašování k webovému rozhraní pluginu MineAuction můžeš získat ve hře. Stačí jenom napsat do chatu příkaz ve tvaru: <strong>/ma pass tvojeheslo</strong>, kde řetězec tvojeheslo nahradíš svým heslem.-->
 \t\t\t\t\t\t\t\t<li>\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<h4>Jak tento plugin funguje?</h4>
-\t\t\t\t\t\t\t\t\t<p>Tento plugin sestává ze dvou částí. První částí je in-game, která běží na herním serveru společně s hrou Minecraft. Pomocí této části můžeš přistupovat k virtuálnímu inventáři, kam si můžeš vkládat předměty nebo je 
-\t\t\t\t\t\t\t\t\tposléze i vybírat. Druhou částí je webový klient (tato stránka), který umožňuje manipulaci s předměty, které máš ve svém virtuálním inventáři. Předměty můžeš prodávat nebo, pokud jsou dostatečně cenné nabízet v aukci. </p>\t\t\t\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\t\t<p>Tento plugin je tvořen webovým rozhraním a minecraft pluginem. Webová část slouží ke kupování a prodávání itemů, jenž ve hře vložíš do tvého aukčního inventáře.  </p>\t\t\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t</li>\t\t
-
+                <!-- /Tento plugin sestává ze dvou částí. První částí je in-game, která běží na herním serveru společně s hrou Minecraft. Pomocí této části můžeš přistupovat k virtuálnímu inventáři, kam si můžeš vkládat předměty nebo je 
+\t\t\t\t\t\t\t\t\tposléze i vybírat. Druhou částí je webový klient (tato stránka), který umožňuje manipulaci s předměty, které máš ve svém virtuálním inventáři. Předměty můžeš prodávat nebo, pokud jsou dostatečně cenné nabízet v aukci. -->
 \t\t\t\t\t\t\t\t<li>\t\t\t\t\t\t\t\t
 \t\t\t\t\t\t\t\t\t<h4>Co je to aukční bod a jak jej vytvořím?</h4>
 \t\t\t\t\t\t\t\t\t<p></p>\t\t\t\t\t\t\t\t\t\t
@@ -122,7 +123,7 @@ class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4
 
 
 /* faq.tpl */
-class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4c3635_830138989 extends Twig_Template
+class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4c3635_432226365 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -162,7 +163,7 @@ class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4
 
 
 /* faq.tpl */
-class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4c3635_1291818590 extends Twig_Template
+class __TwigTemplate_4eed6bcf1333bc4788f6953357ab1b7211d49a59c0e42324dd47f84ddf4c3635_579734694 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {

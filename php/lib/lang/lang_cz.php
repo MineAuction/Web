@@ -42,7 +42,16 @@
 		"offers_count" => "Počet nabídek", 
 		
 		# offer
-		"offers_h1" => "Nabídky", 
+		"offers_h1_all" => "Nabídky - všechny", 
+		"offers_h1_buy" => "Nabídky - nakoupit", 
+		"offers_h1_your" => "Nabídky - tvoje", 
+		"price_sum" => "Cena celkem", 
+		"buy" => "Koupit",
+		"vendor" => "Prodejce", 
+		"offers_select_item" => "Vyber předmět",
+		"offers_placeholder_many" => "Kolik si přeješ koupit?", 
+		"offers_placeholder_item" => "Zadejte název předmětu", 
+		"cancel" => "Zrušit", 
 		
 		# stat
 		"stats_h1" => "Žebříčky", 

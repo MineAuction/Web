@@ -22,18 +22,18 @@
         <td>
           <input type='hidden' class='item_id' value='{{ item.itemId }}'>
           <input type='hidden' class='item_subid' value='{{ item.itemDamage }}'>
-          <img src='../ikony/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }}
+          <img src='../items_icons/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }}
         </td>
         <td class='click_max items_qty'>{{ item.qty }}</td>
-				<td></td>
+		<td></td>
         <td class='to_right'>
           <span class="input-prepend input-append">
             <span class="add-on">{{ lang.pieces }}</span>
-            <input class="span2 input1 items_count" type="text" placeholder='{{ lang.qty }}'>
+            <input class="span2 input1 items_count" type="text" placeholder='{{ lang.qty }}' required>
           </span>                                         
           <span class="input-prepend input-append">
             <span class="add-on">{{ settings.currency }}</span>
-            <input class="span2 input1 items_price" id="appendedPrependedInput" type="text" placeholder='{{ lang.price_pc }}'>
+            <input class="span2 input1 items_price" id="appendedPrependedInput" type="text" placeholder='{{ lang.price_pc }}' required>
           </span>
           <button class='btn btn-primary sell'>{{ lang.sell }}</button>
           <button class='btn btn-success' {{ item.getauction }}>{{ lang.auction }}</button>

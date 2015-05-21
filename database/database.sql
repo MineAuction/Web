@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Počítač: wm48.wedos.net:3306
--- Vygenerováno: Čtv 23. dub 2015, 23:59
+-- Vygenerováno: Pát 22. kvě 2015, 00:33
 -- Verze serveru: 5.6.14
 -- Verze PHP: 5.4.23
 
@@ -44,11 +44,11 @@ CREATE TABLE IF NOT EXISTS `ma_items` (
 
 INSERT INTO `ma_items` (`id`, `playerID`, `itemID`, `itemDamage`, `qty`, `itemMeta`, `enchantments`, `lore`) VALUES
 (1, 1, '1', 4, 62, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(2, 6, '31', 1, 10, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(2, 6, '31', 1, 10, '{"meta-type":"UNSPECIFIC"}', '{}', 'teuiu'),
 (3, 6, '38', 7, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (4, 6, '97', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (6, 1, '1', 2, 4, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(8, 7, '348', 0, 112, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
+(8, 7, '348', 0, 112, '{"meta-type":"UNSPECIFIC"}', '{}', 'test'),
 (9, 6, '16', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (10, 6, '35', 6, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (11, 6, '20', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
@@ -87,9 +87,7 @@ INSERT INTO `ma_items` (`id`, `playerID`, `itemID`, `itemDamage`, `qty`, `itemMe
 (58, 6, '6', 2, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (59, 6, '6', 4, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (61, 6, '7', 0, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
-(62, 1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}}', '{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}', ''),
 (63, 6, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"DAMAGE_ALL":2}}', '{"DAMAGE_ALL":2}', ''),
-(66, 1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"LOOT_BONUS_MOBS":2,"KNOCKBACK":2,"DAMAGE_ARTHROPODS":3}}', '{"DAMAGE_ARTHROPODS":3,"KNOCKBACK":2,"LOOT_BONUS_MOBS":2}', ''),
 (68, 9, '35', 3, 64, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (70, 9, '97', 4, 1, '{"meta-type":"UNSPECIFIC"}', '{}', ''),
 (71, 9, '323', 0, 1, '{"meta-type":"TILE_ENTITY"}', '{}', ''),
@@ -902,7 +900,7 @@ CREATE TABLE IF NOT EXISTS `ma_logs` (
   `text` text CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
   `time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=303 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=330 ;
 
 --
 -- Vypisuji data pro tabulku `ma_logs`
@@ -1202,7 +1200,34 @@ INSERT INTO `ma_logs` (`id`, `component`, `level`, `text`, `time`) VALUES
 (299, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-22 21:33:35'),
 (300, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-22 21:33:38'),
 (301, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-22 21:35:07'),
-(302, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-23 21:35:03');
+(302, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-23 21:35:03'),
+(303, 'Login', 'info', 'User Monetic was successfully logged.', '2015-04-24 12:55:18'),
+(304, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-24 15:00:10'),
+(305, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-04-24 21:41:23'),
+(306, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-26 19:54:56'),
+(307, 'ItemSell', 'info', 'Uživatel Sognus uspěšně vložil item s ID 276:0 do offers', '2015-04-26 19:55:46'),
+(308, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-27 06:30:04'),
+(309, 'Login', 'info', 'User Monetic was successfully logged.', '2015-04-27 13:22:03'),
+(310, 'Login', 'info', 'User Sognus was successfully logged.', '2015-04-29 14:24:07'),
+(311, 'Login', 'info', 'User Monetic was successfully logged.', '2015-05-03 15:44:21'),
+(312, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-05-05 11:05:34'),
+(313, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-05-06 09:23:26'),
+(314, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-05-06 19:39:25'),
+(315, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-05-06 20:58:28'),
+(316, 'Login', 'info', 'User LynSis was successfully logged.', '2015-05-09 20:34:31'),
+(317, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-16 17:16:10'),
+(318, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-16 19:42:40'),
+(319, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-16 21:00:20'),
+(320, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-17 08:52:52'),
+(321, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-19 20:00:28'),
+(322, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-19 20:00:33'),
+(323, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-20 19:49:40'),
+(324, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-05-21 18:03:17'),
+(325, 'Login', 'info', 'User LynSis was successfully logged.', '2015-05-21 19:37:25'),
+(326, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-05-21 19:38:32'),
+(327, 'Login', 'info', 'User LynSis was successfully logged.', '2015-05-21 21:14:09'),
+(328, 'Login', 'info', 'User Sognus was successfully logged.', '2015-05-21 21:14:55'),
+(329, 'Login', 'info', 'User Sekiphp was successfully logged.', '2015-05-21 22:22:38');
 
 -- --------------------------------------------------------
 
@@ -1211,26 +1236,31 @@ INSERT INTO `ma_logs` (`id`, `component`, `level`, `text`, `time`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `ma_menu_items` (
-  `idm` int(11) NOT NULL AUTO_INCREMENT,
+  `idm` int(11) NOT NULL,
   `url` varchar(50) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
   `ico` varchar(100) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL,
   `is_private` enum('0','1') CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL DEFAULT '0',
+  `dropable` tinyint(1) NOT NULL DEFAULT '0',
+  `idp` int(11) NOT NULL,
   PRIMARY KEY (`idm`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Vypisuji data pro tabulku `ma_menu_items`
 --
 
-INSERT INTO `ma_menu_items` (`idm`, `url`, `ico`, `is_private`) VALUES
-(1, 'inventory', 'icon-book', '0'),
-(2, 'offer', 'icon-list-alt', '0'),
-(3, 'demand', 'icon-shopping-cart', '0'),
-(4, 'auction', 'icon-legal', '0'),
-(5, 'stats', 'icon-trophy', '0'),
-(6, 'items', 'icon-folder-open', '0'),
-(7, 'logs', 'icon-code', '0'),
-(8, 'admin', 'icon-wrench', '1');
+INSERT INTO `ma_menu_items` (`idm`, `url`, `ico`, `is_private`, `dropable`, `idp`) VALUES
+(10, 'inventory', 'icon-book', '0', 0, 0),
+(20, 'offers', 'icon-list-alt', '0', 1, 0),
+(21, 'offers-all', '', '0', 0, 20),
+(22, 'offers-buy', '', '0', 0, 20),
+(23, 'offers-your', '', '0', 0, 20),
+(30, 'demand', 'icon-shopping-cart', '0', 0, 0),
+(40, 'auction', 'icon-legal', '0', 0, 0),
+(50, 'stats', 'icon-trophy', '0', 0, 0),
+(60, 'items', 'icon-folder-open', '0', 0, 0),
+(70, 'logs', 'icon-code', '0', 0, 0),
+(80, 'admin', 'icon-wrench', '1', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -1249,22 +1279,28 @@ CREATE TABLE IF NOT EXISTS `ma_menu_locale` (
 --
 
 INSERT INTO `ma_menu_locale` (`idm`, `name`, `lang`) VALUES
-(1, 'Inventář', 'cz'),
-(2, 'Nabídky', 'cz'),
-(3, 'Poptávky', 'cz'),
-(4, 'Aukce', 'cz'),
-(5, 'Žebříčky', 'cz'),
-(6, 'Předměty', 'cz'),
-(7, 'Log', 'cz'),
-(8, 'Admin', 'en'),
-(1, 'Inventory', 'en'),
-(2, 'Offers', 'en'),
-(3, 'Demand', 'en'),
-(4, 'Auctions', 'en'),
-(5, 'Stats', 'en'),
-(6, 'Items', 'en'),
-(7, 'Logs', 'en'),
-(8, 'Admin', 'cz');
+(10, 'Inventář', 'cz'),
+(20, 'Nabídky', 'cz'),
+(30, 'Poptávky', 'cz'),
+(40, 'Aukce', 'cz'),
+(50, 'Žebříčky', 'cz'),
+(60, 'Předměty', 'cz'),
+(70, 'Log', 'cz'),
+(80, 'Admin', 'en'),
+(10, 'Inventory', 'en'),
+(20, 'Offers', 'en'),
+(30, 'Demand', 'en'),
+(40, 'Auctions', 'en'),
+(50, 'Stats', 'en'),
+(60, 'Items', 'en'),
+(70, 'Logs', 'en'),
+(80, 'Admin', 'cz'),
+(21, 'All', 'en'),
+(21, 'Všechny', 'cz'),
+(22, 'Buy', 'en'),
+(22, 'Nákup', 'cz'),
+(23, 'Your', 'en'),
+(23, 'Tvoje', 'cz');
 
 -- --------------------------------------------------------
 
@@ -1283,7 +1319,7 @@ CREATE TABLE IF NOT EXISTS `ma_offers` (
   `lore` varchar(2048) CHARACTER SET utf8 COLLATE utf8_bin NOT NULL,
   `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=26 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Vypisuji data pro tabulku `ma_offers`
@@ -1314,7 +1350,9 @@ INSERT INTO `ma_offers` (`id`, `playerID`, `itemID`, `itemDamage`, `qty`, `itemM
 (22, 7, '348', 0, 11, '{"meta-type":"UNSPECIFIC"}', '{}', 'kunda', 99999999.99),
 (23, 1, '7', 0, 2, '{"meta-type":"UNSPECIFIC"}', '{}', '', 1.00),
 (24, 7, '348', 0, 1, '{"meta-type":"UNSPECIFIC"}', '{}', 'kunda', 11.00),
-(25, 9, '35', 11, 64, '{"meta-type":"UNSPECIFIC"}', '{}', '', 1.00);
+(25, 9, '35', 11, 64, '{"meta-type":"UNSPECIFIC"}', '{}', '', 1.00),
+(26, 1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}}', '{"DAMAGE_UNDEAD":1,"KNOCKBACK":1}', '', 50.00),
+(27, 1, '276', 0, 1, '{"meta-type":"UNSPECIFIC","enchants":{"LOOT_BONUS_MOBS":2,"KNOCKBACK":2,"DAMAGE_ARTHROPODS":3}}', '{"DAMAGE_ARTHROPODS":3,"KNOCKBACK":2,"LOOT_BONUS_MOBS":2}', '', 50.00);
 
 -- --------------------------------------------------------
 
@@ -1341,20 +1379,10 @@ CREATE TABLE IF NOT EXISTS `ma_players` (
   `uuid` varchar(50) NOT NULL,
   `locked` tinyint(1) NOT NULL DEFAULT '0',
   `password` char(40) NOT NULL,
-  `admin` set('0','1') NOT NULL DEFAULT '0',
+  `admin` tinyint(1) NOT NULL DEFAULT '0',
   `lang` char(2) CHARACTER SET utf8 COLLATE utf8_czech_ci NOT NULL DEFAULT 'en',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
-
---
--- Vypisuji data pro tabulku `ma_players`
---
-
-INSERT INTO `ma_players` (`id`, `playerName`, `uuid`, `locked`, `password`, `admin`, `lang`) VALUES
-(1, 'Sognus', '07256eba-f044-4d0f-ba0f-da99524376a4', 0, 'a94a8fe5ccb19ba61c4c0873d391e987982fbbd3', '0', 'en'),
-(6, 'LynSis', '7d771840-f713-4b26-ad23-141f68ea575f', 0, 'dc63d6ec195bce05be6ad090acefe89e028e40e4', '1', 'cz'),
-(7, 'Sekiphp', 'abfce32e-8817-41a6-a1cd-fe8ada2dea12', 0, 'edb433bdd7c13851c7c68cb31a5acf33a80cd2cc', '1', 'en'),
-(9, 'Monetic', '5edb832b-dcf3-476c-b9da-f0fd999c4af7', 0, '7c4a8d09ca3762af61e59520943dc26494f8941b', '1', 'en');
 
 -- --------------------------------------------------------
 

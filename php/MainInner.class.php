@@ -32,11 +32,13 @@ class MainInner implements IMain{
    * Select the page according to $_GET['page'] (start others method)    
    */
 	private function selectPage(){
-		switch($this->get){
+		$parts = exPlode("-", $this->get); # if item is in pattern something-sub -> something is name of controller
+
+		switch($parts[0]){
       case '' :
 			case 'inventory': $this -> section_inventory();
 				break;
-			case 'offer': $this -> section_offer();
+			case 'offers': $this -> section_offer($parts[1]);
 				break;
 			case 'demand': $this -> section_demand();
 				break;
@@ -67,11 +69,31 @@ class MainInner implements IMain{
     $this->render['inv'] = Player::getInventory($_SESSION['playerID']);
   }
   
-  private function section_offer(){
+	/**
+	 * SubController for offers (this section has sub-section)
+	 * 
+	 * @param String $subSection
+	 */
+  private function section_offer($subSection){
+		if($subSection == 'all'){
+			$this-> tpl = "offers_all";		
+			
+			$this -> render['offers'] = Offers::getOffers("all", $_SESSION['playerID']);
+		}
+		elseif($subSection == 'your'){
+			$this-> tpl = "offers_your";	
+
+			$this -> render['myoffers'] = Offers::getOffers("my", $_SESSION['playerID']);			
+		}
+		else{
+			$this-> tpl = "offers_buy";		
+		}
+
+		/*
 		$this-> tpl = "offer";
 			
     $this -> render['offers'] = Offers::getOffers("all", $_SESSION['playerID']);  
-		$this -> render['myoffers'] = Offers::getOffers("my", $_SESSION['playerID']);  
+		$this -> render['myoffers'] = Offers::getOffers("my", $_SESSION['playerID']);  */
   }
 	
   private function section_settings(){

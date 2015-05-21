@@ -37,8 +37,8 @@
 		"pass" => "", 	
 	);	
 	$db_economy_addons = array(
-		"table" => "aukce_ajconomy", 
-		"money" => "monej", 
-		"uuid" => "uuajdy", 	
+		"table" => "", 
+		"money" => "",  // name of column with player money 
+		"uuid" => "",	 // name of column with player unicate identificator 	
 	);
 	$GLOBALS['economy'] = $db_economy_addons;

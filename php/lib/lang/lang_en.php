@@ -42,7 +42,16 @@
 		"offers_count" => "Offers count", 		
 
 		# offer
-		"offers_h1" => "Offers", 
+		"offers_h1_all" => "Offers - List", 
+		"offers_h1_buy" => "Offers - Buy", 
+		"offers_h1_your" => "Offers - My", 
+		"price_sum" => "Price sum",
+		"buy" => "Buy", 
+		"vendor" => "Vendor", 
+		"offers_select_item" => "Choose item", 
+		"offers_placeholder_many" => "How many do you like to buy?", 
+		"offers_placeholder_item" => "Write item name",
+		"cancel" => "Cancel", 		
 
 		# stat
 		"stats_h1" => "Stats", 

@@ -28,8 +28,10 @@ class __TwigTemplate_acca265547b3216da3af94cc7b4a5091cb3d1b665616778db6c9cc0360a
     public function block_content($context, array $blocks = array())
     {
         // line 6
-        echo "
-  stat :) :)
+        echo "\t<h1>";
+        if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "stats_h1", array()), "html", null, true);
+        echo "</h1>
 
 ";
     }

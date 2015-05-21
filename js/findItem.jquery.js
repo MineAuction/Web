@@ -26,7 +26,7 @@ $(document).ready(function(){
 	})
 	.autocomplete( "instance" )._renderItem = function( ul, item ) {
 		return $( "<li>" )
-		.append( "<a class='auto_inst'><img src='/ikony/" + item.img + "'>" + item.label + "</a>" )
+		.append( "<a class='auto_inst'><img src='/items_icons/" + item.img + "'>" + item.label + "</a>" )
 		.appendTo( ul );
 	};  
 });

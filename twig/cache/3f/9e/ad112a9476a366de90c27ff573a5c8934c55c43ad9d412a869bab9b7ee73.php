@@ -30,9 +30,9 @@ class __TwigTemplate_3f9ead112a9476a366de90c27ff573a5c8934c55c43ad9d412a869bab9b
         // line 4
         echo "\t<h1>";
         if (isset($context["lang"])) { $_lang_ = $context["lang"]; } else { $_lang_ = null; }
-        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "admin", array()), "html", null, true);
+        echo twig_escape_filter($this->env, $this->getAttribute($_lang_, "admin_h1", array()), "html", null, true);
         echo "</h1>
-admin?
+
 ";
     }
 
