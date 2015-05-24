@@ -64,9 +64,9 @@ class MainInner implements IMain{
 
   private function section_inventory(){
     $this -> tpl = "inventory";
-		$this -> get = "inventory"; // fix menu
+		$this -> get = "inventory"; // fix menu - inventory is default section
     
-    $this->render['inv'] = Player::getInventory($_SESSION['playerID']);
+    $this->render['inv'] = Inventory::getInventory($_SESSION['playerID'], $this -> locale);
   }
   
 	/**

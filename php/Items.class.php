@@ -16,7 +16,7 @@ class Items{
 				il.itemID != -1 
 			ORDER BY il.itemID, il.itemSubID ASC
 		";	
-echo $sql;
+
 		return DB::assocAll(DB::query($sql));
 	}
 		

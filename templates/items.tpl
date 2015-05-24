@@ -17,7 +17,7 @@
     {% for item in items %}
       <tr>
         <td>
-          <img src='../ikony/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }}
+          <img src='../items_icons/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }}
         </td>
 				<td>{{ item.count }}</td>
         <td>{{ item.itemID }}</td>

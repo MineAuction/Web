@@ -22,7 +22,7 @@
 			{% for item in offers %}
 			<tr>
         <td><img class="img1" src='https://minotar.net/avatar/{{ item.playerName }}/32' alt='{{ item.playerName }}'>{{ item.playerName }}</td>
-				<td><img class="img1" src='../items_icons/{{ item.img }}' alt='{{ item.name }}'>{{ item.name }}</td>
+				<td><img class="img1" src='../items_icons/{{ item.img }}' alt='{{ item.name }}'>{{ item.name }}{{ item.itemMeta }}</td>
 				<td class='click_max'>{{ item.qty }}</td>
 				<td>{{ item.price }} </td>
 				<td>{{ item.priceAll }} </td>
@@ -31,7 +31,8 @@
 						<span class="add-on">{{ lang.pieces }}</span>
 						<input class="span2 input1 items_count" id="appendedPrependedInput" type="text" placeholder='{{ lang.qty }}' required>
 					</span>
-					<button class='btn btn-primary'>{{ lang.buy }}</button>
+					<input type='hidden' name='row_id' class='row_id' value='{{ item.offerId }}' />
+					<button class='btn btn-primary offer_buy'>{{ lang.buy }}</button>
 				</td>
 			</tr>
 			{% endfor %}

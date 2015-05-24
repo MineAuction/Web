@@ -30,6 +30,7 @@
 		"pieces" => "pc", 
 		"available_actions" => "Available actions", 
 		"auction" => "Auction", 	
+		"damaged" => "damaged", 
 
 		# demand
 		"demand_h1" => "Demand", 
@@ -41,7 +42,7 @@
 		"items_h1" => "Available items",
 		"offers_count" => "Offers count", 		
 
-		# offer
+		# offers
 		"offers_h1_all" => "Offers - List", 
 		"offers_h1_buy" => "Offers - Buy", 
 		"offers_h1_your" => "Offers - My", 
@@ -51,7 +52,11 @@
 		"offers_select_item" => "Choose item", 
 		"offers_placeholder_many" => "How many do you like to buy?", 
 		"offers_placeholder_item" => "Write item name",
-		"cancel" => "Cancel", 		
+		"cancel" => "Cancel", 	
+		"offer_cheat"	=> "Error", 	
+		"offer_canceled" => "Offer deleted",
+		"no_money" => "You haven't much money",
+		"buy_ok" => "Successfully bought",		
 
 		# stat
 		"stats_h1" => "Stats", 

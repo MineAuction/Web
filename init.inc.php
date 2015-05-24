@@ -14,6 +14,7 @@
 	require_once 'php/lib/DB.class.php';
 	require_once 'php/lib/DB2.class.php';
 	require_once 'php/lib/Locale.class.php';  
+	require_once 'php/lib/ItemMeta.class.php';  
 	require_once 'php/int/IMain.interface.php';
 	
 	# connect to DBs (auction & economy plugin)

@@ -10,7 +10,7 @@
 		
     "bad_qty" => "Špatné množství", 
     "bad_price" => "Cena je mimo rozsah", 
-    "sell_ok" => "Prodej je ok",
+    "sell_ok" => "Předmět byl nabídnut k prodeji",
 		"qty" => "Počet", 
 		"item" => "Předmět",
 		"settings" => "Nastavení", 
@@ -29,7 +29,8 @@
 		"price_pc" => "Cena/ks", 
 		"pieces" => "ks", 
 		"available_actions" => "Dostupné akce", 
-		"auction" => "Dražit", 
+		"auction" => "Dražit",
+		"damaged" => "zničeno", 
 		
 		# demand
 		"demand_h1" => "Poptávky", 
@@ -41,7 +42,7 @@
 		"items_h1" => "Dostupné předměty", 
 		"offers_count" => "Počet nabídek", 
 		
-		# offer
+		# offers
 		"offers_h1_all" => "Nabídky - všechny", 
 		"offers_h1_buy" => "Nabídky - nakoupit", 
 		"offers_h1_your" => "Nabídky - tvoje", 
@@ -51,7 +52,11 @@
 		"offers_select_item" => "Vyber předmět",
 		"offers_placeholder_many" => "Kolik si přeješ koupit?", 
 		"offers_placeholder_item" => "Zadejte název předmětu", 
-		"cancel" => "Zrušit", 
+		"cancel" => "Zrušit",
+		"offer_cheat"	=> "Chyba", 
+		"offer_canceled" => "Nabídka smazána", 
+		"no_money" => "Na tento nákup nemáš peníze",
+		"buy_ok" => "Předmět byl zakoupen",	
 		
 		# stat
 		"stats_h1" => "Žebříčky", 

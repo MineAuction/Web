@@ -22,23 +22,18 @@
 	
 	# DB config MineAuction
 	$db_ma = array(
-		"server" => "", 
-		"name" => "", 
-		"user" => "", 
-		"pass" => "", 	
+		
 	);
 	
 	# DB config economy plugin
 	# MineAuction need to get data from another plugin
 	$db_economy = array(
-		"server" => "", 
-		"name" => "", 
-		"user" => "", 
-		"pass" => "", 	
+
 	);	
 	$db_economy_addons = array(
-		"table" => "", 
-		"money" => "",  // name of column with player money 
-		"uuid" => "",	 // name of column with player unicate identificator 	
+		"table" => "ma_players", 
+		"money" => "money",  // name of column with player money 
+		"uuid" => "uuid",	 // name of column with player unicate identificator 	
 	);
+
 	$GLOBALS['economy'] = $db_economy_addons;

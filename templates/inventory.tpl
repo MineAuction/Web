@@ -20,12 +20,11 @@
     {% for item in inv %}
       <tr>
         <td>
-          <input type='hidden' class='item_id' value='{{ item.itemId }}'>
-          <input type='hidden' class='item_subid' value='{{ item.itemDamage }}'>
-          <img src='../items_icons/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }}
+          <input type='hidden' class='row_id' value='{{ item.id }}'>
+          <img src='../items_icons/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }} {{ item.enchants }} {{item.damage | raw}}
         </td>
         <td class='click_max items_qty'>{{ item.qty }}</td>
-		<td></td>
+				<td></td>
         <td class='to_right'>
           <span class="input-prepend input-append">
             <span class="add-on">{{ lang.pieces }}</span>
