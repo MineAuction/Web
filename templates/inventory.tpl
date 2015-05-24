@@ -21,7 +21,7 @@
       <tr>
         <td>
           <input type='hidden' class='row_id' value='{{ item.id }}'>
-          <img src='../items_icons/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }} {{ item.enchants }} {{item.damage | raw}}
+          <img src='../items_icons/{{ item.img }}' alt='{{ item.name }}' class="img1">{{ item.name }}
         </td>
         <td class='click_max items_qty'>{{ item.qty }}</td>
 				<td></td>

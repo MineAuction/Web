@@ -10,6 +10,16 @@ class ItemMeta {
 		$this -> enchants = $enchants;
 	}
 	
+	public function parseItemName(){
+		foreach(preg_split("/((\r?\n)|(\r\n?))/", $this->meta) as $line){
+			if(strPos($line, "display-name:") !== FALSE){
+				$parts = explode(":", $line);
+				
+				return " - " . $parts[1];
+			}
+		} 
+	}
+	
 	/**
 	 * http://minecraft.gamepedia.com/Item_durability
 	 */
@@ -25,27 +35,55 @@ class ItemMeta {
 		} 
 	}
 	
-	//https://docs.oc.tc/reference/enchantments
+	/**
+	 * Parse item enchantments - can be in columns ItemMeta and in Enchantments
+	 */
 	public function parseEnchants(){
+		$ret2 = $this -> parseEnchantsFromMeta();
+		$ret1 = $this -> parseEnchantsFromEnchantments();
+		
+		$ret = array_merge($ret1, $ret2);
+		if(count($ret) != 0)
+			return "(" . imPlode(", ", $ret) . ")";
+	}
+	
+	//https://docs.oc.tc/reference/enchantments
+	public function parseEnchantsFromEnchantments(){
+		$ret = array();
+		
 		if($this -> enchants == "{}")
-			return;
+			return $ret;
 		
 		// clear String
 		$delete = array("{", "}", "\"");
 		$this -> enchants = str_replace($delete, "", $this -> enchants);
 		
 		// loop
-		$ret = array();
 		$parts = exPlode(",", $this -> enchants);
 		foreach($parts as $value){
 			$split = exPlode(":", $value);
 			$ret[] = $this -> findItemEnchant($split[0]) . " " . $split[1];
 		}
 		
-		$toString = imPlode(", ", $ret);
-		
-		if($toString != "")
-			return "(" . imPlode(", ", $ret) . ")";
+		return $ret;
+	}
+	
+	private function parseEnchantsFromMeta(){
+		$ret = array();
+		$enchants = FALSE;
+		foreach(preg_split("/((\r?\n)|(\r\n?))/", $this->meta) as $line){
+			if(strPos($line, "stored-enchants:") !== FALSE){
+				$enchants = TRUE;
+			}
+			
+			$line = trim($line);
+			if($enchants && $line != "stored-enchants:" && $line != ""){
+				$split = exPlode(":", $line);
+				$ret[] = $this -> findItemEnchant($split[0]) . " " . $split[1];
+			}
+		}
+
+		return $ret;
 	}
 	
 	private function findItemEnchant($eConstant){
@@ -99,10 +137,10 @@ class ItemMeta {
 			285 => 33, 
 			286 => 33, 
 			294 => 33, 
-			314 => 33, 
-			315 => 33, 
-			316 => 33, 
-			317 => 33, 
+			314 => 78, 
+			315 => 113, 
+			316 => 106, 
+			317 => 92, 
 			
 			// wood: 60
 			268 => 60, 
@@ -124,10 +162,10 @@ class ItemMeta {
 			258 => 251,
 			267 => 251,
 			292 => 251,
-			306 => 251,
-			307 => 251,
-			308 => 251,
-			309 => 251,			
+			306 => 166,
+			307 => 241,
+			308 => 226,
+			309 => 196,			
 			
 			// diamond: 1562 
 			276 => 1562, 
@@ -135,10 +173,10 @@ class ItemMeta {
 			278 => 1562, 
 			279 => 1562, 
 			293 => 1562, 
-			310 => 1562, 
-			311 => 1562, 
-			312 => 1562, 
-			313	=> 1562, 		
+			310 => 364, 
+			311 => 529, 
+			312 => 496, 
+			313	=> 430, 		
 			
 			// fishing rods: 65 
 			346 => 65, 
@@ -151,13 +189,26 @@ class ItemMeta {
 			
 			// bow: 385 
 			261 => 285, 
+			
+			// leather 
+			298 => 56, 
+			299 => 81, 
+			300 => 76, 
+			301 => 66, 
+			
+			// chainmal
+			302 => 166, 
+			303 => 241, 
+			304 => 226, 
+			305 => 196, 
+			
 		);
 
 		return $durability[$itemID];
 	}
 	
 	private function calculateDamage($actualDamage, $maxDamage){
-		return round($actualDamage / ($maxDamage / 100), 2);
+		return round($actualDamage / (($maxDamage - 1) / 100), 2); // mojang count from 0 
 	}
 
 	

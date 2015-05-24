@@ -22,13 +22,13 @@
 	
 	# DB config MineAuction
 	$db_ma = array(
-		
+			
 	);
 	
 	# DB config economy plugin
 	# MineAuction need to get data from another plugin
 	$db_economy = array(
-
+	
 	);	
 	$db_economy_addons = array(
 		"table" => "ma_players", 

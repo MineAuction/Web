@@ -9,7 +9,7 @@
 		session_start();
 	}
 	
-	# include important libraries in each section
+	# include libraries
 	require_once 'config.inc.php';
 	require_once 'php/lib/DB.class.php';
 	require_once 'php/lib/DB2.class.php';

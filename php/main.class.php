@@ -38,24 +38,20 @@ class Main{
 	private function setBasicRenderParams(){
     $this -> render['settings'] = $GLOBALS['settings'];
 		$this -> render['pageURL'] = $this -> get;
+		$this -> render['lang'] = $this -> locale -> getTable();
 	}
 	
 	/**
 	 * Specify access
 	 */
 	private function selectPage(){
-		if(!isSet($_SESSION['playerID'])){		
-			$main = new MainOuter($this -> get, $this -> locale);
-		}
-		else{			
-			$main = new MainInner($this -> get, $this -> locale);				
-		}
+		# select controller
+		$className = (!isSet($_SESSION['playerID'])) ? "MainOuter" : "MainInner";
+		$main = new $className($this -> get, $this -> locale);
 		
 		# get data from sub class
 		$this -> render += $main -> getRenderArray();
 		$this -> tpl = $main -> getTemplate();
-		
-		$this -> render['lang'] = $this -> locale -> getTable();
 	}
 	
 	/**

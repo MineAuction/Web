@@ -14,7 +14,7 @@ class Offers{
 			INNER JOIN " . TABLE_PLAYERS . " AS p 
 			ON 
 				ip.itemID = il.itemID AND 
-				(ip.itemDamage = il.itemSubID OR 0 = il.itemSubID) AND 
+				ip.itemDamage = il.itemSubID AND 
 				p.id = ip.playerID 
     ";
 		$sql .= ($type != "all") ? "WHERE playerID = :playerID" : "WHERE playerID != :playerID";	
@@ -76,7 +76,6 @@ class Offers{
 						id = ?
 			";
 			$params = array($offerID);
-			DB::query($sql, $params);
 		}
 		else{
 			// update inventory
@@ -90,9 +89,8 @@ class Offers{
 				":qty" => $data['qty'] + $inventory['qty'], 
 				":row_id" => $inventory['id'], 
 			);
-			
-			DB::query($sql, $params);
 		}
+		DB::query($sql, $params);
 
 		// delete offer
 		$params = array($offerID);
