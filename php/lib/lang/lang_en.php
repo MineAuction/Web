@@ -1,5 +1,5 @@
 <?php
-	// example with variables: "bad_price" => "špatná cena - zadal jste: {a:1}, ale je povoleno max {a:2}"
+	// example with variables: "bad_price" => "Å¡patnÃ¡ cena - zadal jste: {a:1}, ale je povoleno max {a:2}"
   $dictionary = array(
     # login page
     "login_h1" => "Member login",
@@ -50,12 +50,12 @@
 		"buy" => "Buy", 
 		"vendor" => "Vendor", 
 		"offers_select_item" => "Choose item", 
-		"offers_placeholder_many" => "How many do you like to buy?", 
+		"offers_placeholder_many" => "How many do you want to buy?", 
 		"offers_placeholder_item" => "Write item name",
 		"cancel" => "Cancel", 	
 		"offer_cheat"	=> "Error", 	
 		"offer_canceled" => "Offer deleted",
-		"no_money" => "You haven't much money",
+		"no_money" => "You don't have enough money",
 		"buy_ok" => "Successfully bought",		
 
 		# stat
