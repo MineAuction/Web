@@ -4,13 +4,13 @@
  *
  * @author Sekiphp
  */ 
-class Locale{
+class LocaleTranslation {
 	/** Lang to translate */
   public $lang;
 	/** Path to lang packages */
   private $path = "lang/";
 	/** Default language package */
-	private $defaltLang;
+	private $defaultLang;
 	/** Array with translations in selected language */
 	private $dictionary;
   
@@ -42,7 +42,7 @@ class Locale{
 			$this->lang = $this->defaultLang;
 			require_once $this->path . 'lang_' . $this->lang . '.php';
 		}
-		$this->dictionary = $dictionary;		
+		$this->dictionary = $dictionary; // variable from required file
 	}
 	
   /**

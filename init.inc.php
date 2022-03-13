@@ -13,7 +13,7 @@
 	require_once 'config.inc.php';
 	require_once 'php/lib/DB.class.php';
 	require_once 'php/lib/DB2.class.php';
-	require_once 'php/lib/Locale.class.php';  
+	require_once 'php/lib/LocaleTranslation.class.php';
 	require_once 'php/lib/ItemMeta.class.php';  
 	require_once 'php/int/IMain.interface.php';
 	
@@ -22,7 +22,7 @@
 	DB2::connect($db_economy);
 	
 	# language
-	$locale = new Locale();
+	$locale = new LocaleTranslation();
 	$locale -> setDefaultLang($GLOBALS['settings']['default_lang']);	
 	$locale -> setLocale($_SESSION['playerLang']);
 	//print_r($locale->getTable());
