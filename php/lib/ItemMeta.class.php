@@ -62,6 +62,10 @@ class ItemMeta {
 		$parts = exPlode(",", $this -> enchants);
 		foreach($parts as $value){
 			$split = exPlode(":", $value);
+            if (count($split) !== 2) {
+                continue;
+            }
+            
 			$ret[] = $this -> findItemEnchant($split[0]) . " " . $split[1];
 		}
 		
